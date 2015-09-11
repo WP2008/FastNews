@@ -90,7 +90,8 @@
 /** 添加子控制器 */
 - (void)addNewsController {
     for (int i=0 ; i<self.arrayLists.count ; i++){
-        SDNewsTableViewController *newsVC  = [[SDNewsTableViewController alloc]init];
+        SDNewsTableViewController *newsVC  = [[UIStoryboard storyboardWithName:@"SDNews" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+;
         newsVC.title = self.arrayLists[i][@"title"];
         newsVC.urlString = self.arrayLists[i][@"urlString"];
         newsVC.index = i;

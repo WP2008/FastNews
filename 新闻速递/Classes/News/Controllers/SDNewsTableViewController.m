@@ -8,8 +8,15 @@
 
 #import "SDNewsTableViewController.h"
 #import "SDNetWorkTool.h"
+#import "SDNewsModel.h"
 #import "MJRefresh.h"
 #import "MJExtension.h"
+#import "MBProgressHUD+MJ.h"
+
+typedef NS_ENUM(NSUInteger, SDLoadDataType) {
+    SDLoadNewData,
+    SDLoadMoreData,
+};
 
 
 @interface SDNewsTableViewController ()
@@ -24,7 +31,7 @@
     [super viewDidLoad];
     [self.tableView addHeaderWithTarget:self action:@selector(loadData)];
     [self.tableView addFooterWithTarget:self action:@selector(loadMoreData)];
-    self.tableView.backgroundColor = [UIColor redColor];
+   
 }
 
 
@@ -45,50 +52,46 @@
 - (void)loadData
 {
     
-    NSString *urlstring = [NSString stringWithFormat:@"/nc/article/%@/0-20.html",self.urlString];
-    [self loadDataWithURLString:urlstring];
+    NSString *allUrlstring = [NSString stringWithFormat:@"/nc/article/%@/0-20.html",self.urlString];
+    [self loadDataForType:SDLoadNewData WithURLString:allUrlstring];
 
 }
 
 // ------上拉加载
 - (void)loadMoreData
 {
-    NSString *urlstring = [NSString stringWithFormat:@"/nc/article/%@/%ld-20.html",self.urlString,(self.arrayList.count - self.arrayList.count%10)];
-   [self loadDataWithURLString:urlstring];
+    NSString *allUrlstring = [NSString stringWithFormat:@"/nc/article/%@/%ld-20.html",self.urlString,(self.arrayList.count - self.arrayList.count%10)];
+    [self loadDataForType:SDLoadMoreData WithURLString:allUrlstring];
 }
 
 // ------公共方法
-- (void)loadDataWithURLString:(NSString *)urlStr {
-    
-    NSLog(@"%@",urlStr);
+- (void)loadDataForType:(SDLoadDataType)type WithURLString:(NSString *)urlStr {
+
     // http://c.m.163.com//nc/article/list/T1348649654285/0-20.html
     // http://c.m.163.com/photo/api/set/0096/57255.json
     // http://c.m.163.com/photo/api/set/54GI0096/57203.html
+ 
+[[SDNetWorkTool sharedNetworkTool]GET:urlStr parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
     
-    [[[AFHTTPSessionManager alloc]init]GET:@"c.m.163.com//nc/article/list/T1348649654285/0-20.html" parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
-        responseObject;
-        
-        NSString *key = [responseObject.keyEnumerator nextObject];
-        NSArray *temArray = responseObject[key];
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-        
-    }];
-
+    NSString *key = [responseObject.keyEnumerator nextObject]; // 获取字典中得 key
+    NSArray *temArray = responseObject[key];
     
-//    
-//[[SDNetWorkTool sharedNetworkTool]GET:urlStr parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
-//
-//        responseObject;
-//        
-//        NSString *key = [responseObject.keyEnumerator nextObject];
-//        NSArray *temArray = responseObject[key];
-//    
-//} failure:^(NSURLSessionDataTask *task, NSError *error) {
-//    
-//    
-//}];
+    NSMutableArray *arrayM = [SDNewsModel objectArrayWithKeyValuesArray:temArray];
+    
+    if (type == SDLoadNewData) {
+        self.arrayList = arrayM;
+        [self.tableView headerEndRefreshing];
+        [self.tableView reloadData];
+    }else if(type == SDLoadMoreData){
+        [self.arrayList addObjectsFromArray:arrayM];
+        [self.tableView footerEndRefreshing];
+        [self.tableView reloadData];
+    }
+    
+} failure:^(NSURLSessionDataTask *task, NSError *error) {
+    
+        [MBProgressHUD showError:@"加载失败，请稍候再试"];
+}];
 
 
 }

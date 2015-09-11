@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SDNewsModel;
 
 @interface SDNewsCell : UITableViewCell
 
-
+@property(nonatomic,strong) SDNewsModel *NewsModel;
 
 
 @end
