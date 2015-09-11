@@ -1,4 +1,4 @@
-//
+	//
 //  SDMainViewController.m
 //  新闻速递
 //
@@ -51,8 +51,7 @@
 
         _smallScrollView.showsHorizontalScrollIndicator = NO;
         _smallScrollView.showsVerticalScrollIndicator = NO;
-        
-        _smallScrollView.backgroundColor = [UIColor purpleColor];
+        _smallScrollView.backgroundColor = [UIColor clearColor];
     }
     return _smallScrollView;
 }
@@ -66,7 +65,6 @@
         _bigScrollView.showsHorizontalScrollIndicator = NO;
         _bigScrollView.pagingEnabled = YES;
     
-
     }
     return _bigScrollView;
 }
@@ -79,9 +77,6 @@
     [self addNewsController];
     [self addLable];
     [self setScrollView];
-
- 
-    
 }
 
 
@@ -98,10 +93,12 @@
         SDNewsTableViewController *newsVC  = [[SDNewsTableViewController alloc]init];
         newsVC.title = self.arrayLists[i][@"title"];
         newsVC.urlString = self.arrayLists[i][@"urlString"];
+        newsVC.index = i;
         [self addChildViewController:newsVC];
     }
     
 }
+
 
 /** 添加标题栏 */
 - (void)addLable {
@@ -136,7 +133,10 @@
     //添加约束
     [self.smallScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@44);
-        make.top.equalTo(@64);
+        CGFloat topH = self.topLayoutGuide.length;
+        
+#warning TODO 怎么获取导航的高度
+        make.top.equalTo(@(64));
         make.width.and.centerX.equalTo(self.view);
     
     }];
@@ -168,7 +168,7 @@
 {
     SDTitleLabel *titlelable = (SDTitleLabel *)recognizer.view;
     
-    CGFloat offsetX = titlelable.tag * self.bigScrollView.frame.size.width;
+    CGFloat offsetX = titlelable.tag * self.bigScrollView.width;
     
     CGFloat offsetY = self.bigScrollView.contentOffset.y;
     CGPoint offset = CGPointMake(offsetX, offsetY);
@@ -188,9 +188,26 @@
     // 滚动标题栏
     SDTitleLabel *titleLable = (SDTitleLabel *)self.smallScrollView.subviews[index];
     
-    CGFloat offsetMax = self.smallScrollView.contentSize.width - self.smallScrollView.frame.size.width;
-    CGFloat offsetx = titleLable.center.x - self.smallScrollView.frame.size.width * 0.5;
+    // 当前要滚动到的地方
+    CGFloat offsetX =  titleLable.centerX - _smallScrollView.centerX;
+    CGFloat offsetMax = _smallScrollView.contentSize.width - _smallScrollView.width;
+    if (offsetX < 0) {
+        offsetX = 0;
+    } else if (offsetX > offsetMax)
+    {
+        offsetX = offsetMax;
+    }
 
+    CGPoint offset = CGPointMake(offsetX, 0);
+    [_smallScrollView setContentOffset:offset animated:YES];
+    
+    
+    
+    // 添加控制器的视图
+    SDNewsTableViewController *newsVC = self.childViewControllers[index];
+    if(newsVC.view.superview != nil) return;
+    newsVC.view.frame = scrollView.bounds; // bounds 时当时 scrollView显示 的区域
+    [self.bigScrollView addSubview:newsVC.view];
     
 }
 
@@ -212,8 +229,8 @@
     CGFloat scaleRight = value - leftIndex;
     CGFloat scaleLeft = 1 - scaleRight;
     
-    Log(@"value = %f,leftIndex = %lu,rightIndex = %lu",value,leftIndex,(unsigned long)rightIndex);
-    Log(@"scaleRight = %f",scaleRight);
+   // Log(@"value = %f,leftIndex = %lu,rightIndex = %lu",value,leftIndex,(unsigned long)rightIndex);
+   // Log(@"scaleRight = %f",scaleRight);
     // 取出要操控的对象
     SDTitleLabel *labelLeft = self.smallScrollView.subviews[leftIndex];
     labelLeft.scale = scaleLeft;
@@ -226,5 +243,7 @@
 
 
 }
+
+
 
 @end

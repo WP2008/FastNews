@@ -15,6 +15,9 @@
  */
 @property(nonatomic,copy) NSString *urlString;
 
+/**
+ *  vc在scrollView 中的索引
+ */
 @property (nonatomic,assign) NSInteger index;
 
 

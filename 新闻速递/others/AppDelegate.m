@@ -22,7 +22,7 @@
     
     
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    self.window.backgroundColor = [UIColor grayColor];
+    _window.backgroundColor = [UIColor whiteColor];
     SDMainViewController *mainVC = [[SDMainViewController alloc]init];
     SDNavigationController *navi = [[SDNavigationController alloc]initWithRootViewController:mainVC];
     self.window.rootViewController = navi;
