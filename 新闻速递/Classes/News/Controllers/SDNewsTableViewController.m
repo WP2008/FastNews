@@ -8,10 +8,13 @@
 
 #import "SDNewsTableViewController.h"
 #import "SDNetWorkTool.h"
-#import "SDNewsModel.h"
 #import "MJRefresh.h"
 #import "MJExtension.h"
 #import "MBProgressHUD+MJ.h"
+#import "SDCount.h"
+
+#import "SDNewsModel.h"
+#import "SDNewsCell.h"
 
 typedef NS_ENUM(NSUInteger, SDLoadDataType) {
     SDLoadNewData,
@@ -31,7 +34,21 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
     [super viewDidLoad];
     [self.tableView addHeaderWithTarget:self action:@selector(loadData)];
     [self.tableView addFooterWithTarget:self action:@selector(loadMoreData)];
-   
+//    [self.tableView setHeaderPullToRefreshText:@"拉我, 要文速递"];
+    [self.tableView setHeaderRefreshingText:@"正在搜索新鲜资讯"];
+//    [self.tableView setHeaderReleaseToRefreshText:@""];
+     [self.tableView setFooterRefreshingText:@"给你讲以前的故事"];
+
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+#warning  第一次滑动到这个view时 才调用
+    [self.tableView headerBeginRefreshing];
+    
+ 
+    
 }
 
 
@@ -78,6 +95,9 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
     
     NSMutableArray *arrayM = [SDNewsModel objectArrayWithKeyValuesArray:temArray];
     
+    
+#warning 注意线程  主线程
+    
     if (type == SDLoadNewData) {
         self.arrayList = arrayM;
         [self.tableView headerEndRefreshing];
@@ -97,64 +117,55 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
 }
 
 #pragma mark - Table view data source
-
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//
-//    return self.arrayList.count;;
-//}
-
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.arrayList.count;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SDNewsModel *newsModel = self.arrayList[indexPath.row];
+    
+    // 获取对应的cellID
+    NSString *ID = [SDNewsCell idForRow:newsModel];
+    
+    if ((indexPath.row%20 == 0) && (indexPath.row != 0)) {
+        ID = @"NewsCell";
+    }
+    
+    SDNewsCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    cell.NewsModel = newsModel;
+    
+    return cell;
+    
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+
+#pragma mark - Table view delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  
+    SDNewsModel *newsModel = self.arrayList[indexPath.row];
+    
+    CGFloat rowHeight = [SDNewsCell heightForRow:newsModel];
+    
+    if ((indexPath.row%20 == 0)&&(indexPath.row != 0)) {
+        rowHeight = 80;
+    }
+    
+    return rowHeight;
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 刚选中又马上取消选中，格子不变色
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
-*/
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

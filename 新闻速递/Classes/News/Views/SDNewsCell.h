@@ -13,5 +13,8 @@
 
 @property(nonatomic,strong) SDNewsModel *NewsModel;
 
++ (NSString *)idForRow:(SDNewsModel *)NewsModel;
+
++ (CGFloat)heightForRow:(SDNewsModel *)NewsModel;
 
 @end

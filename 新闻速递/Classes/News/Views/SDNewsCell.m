@@ -5,7 +5,12 @@
 //
 //  Created by tarena on 15/9/11.
 //  Copyright (c) 2015年 tarena. All rights reserved.
-//
+/**
+ cell 的高度计算不太好
+ 
+ storyBoard 的 cell  不同样式统一创建 比较🐂
+ 
+ */
 
 #import "SDNewsCell.h"
 #import "SDNewsModel.h"
@@ -63,6 +68,7 @@ static NSString *const placeholderImage = @"302";
 
 
 - (void)setNewsModel:(SDNewsModel *)NewsModel {
+    _NewsModel = NewsModel;
     
     [self.imgIcon sd_setImageWithURL:[NSURL URLWithString:self.NewsModel.imgsrc] placeholderImage:[UIImage imageNamed:placeholderImage]];
     self.lblTitle.text = self.NewsModel.title;

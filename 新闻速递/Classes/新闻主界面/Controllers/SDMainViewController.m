@@ -154,6 +154,7 @@
     CGFloat contentX = self.childViewControllers.count * [UIScreen mainScreen].bounds.size.width;
     self.bigScrollView.contentSize = CGSizeMake(contentX, 0);
     
+    
     // 添加默认控制器
     UIViewController *vc = [self.childViewControllers firstObject];
     vc.view.frame = self.bigScrollView.bounds;
