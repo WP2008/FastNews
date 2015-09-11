@@ -7,8 +7,9 @@
 //
 
 #import "SDNewsTableViewController.h"
+#import "SDNetWorkTool.h"
 #import "MJRefresh.h"
-
+#import "MJExtension.h"
 
 
 @interface SDNewsTableViewController ()
@@ -23,7 +24,7 @@
     [super viewDidLoad];
     [self.tableView addHeaderWithTarget:self action:@selector(loadData)];
     [self.tableView addFooterWithTarget:self action:@selector(loadMoreData)];
-
+    self.tableView.backgroundColor = [UIColor redColor];
 }
 
 
@@ -43,21 +44,51 @@
 // ------下拉刷新
 - (void)loadData
 {
-    // http://c.m.163.com//nc/article/headline/T1348647853363/0-30.html
-    NSString *allUrlstring = [NSString stringWithFormat:@"/nc/article/%@/0-20.html",self.urlString];
+    
+    NSString *urlstring = [NSString stringWithFormat:@"/nc/article/%@/0-20.html",self.urlString];
+    [self loadDataWithURLString:urlstring];
 
 }
 
 // ------上拉加载
 - (void)loadMoreData
 {
-    NSString *allUrlstring = [NSString stringWithFormat:@"/nc/article/%@/%ld-20.html",self.urlString,(self.arrayList.count - self.arrayList.count%10)];
-
+    NSString *urlstring = [NSString stringWithFormat:@"/nc/article/%@/%ld-20.html",self.urlString,(self.arrayList.count - self.arrayList.count%10)];
+   [self loadDataWithURLString:urlstring];
 }
 
 // ------公共方法
-- (void)loadDataWithURL:(NSString *)allUrlstring {
+- (void)loadDataWithURLString:(NSString *)urlStr {
+    
+    NSLog(@"%@",urlStr);
+    // http://c.m.163.com//nc/article/list/T1348649654285/0-20.html
+    // http://c.m.163.com/photo/api/set/0096/57255.json
+    // http://c.m.163.com/photo/api/set/54GI0096/57203.html
+    
+    [[[AFHTTPSessionManager alloc]init]GET:@"c.m.163.com//nc/article/list/T1348649654285/0-20.html" parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
+        responseObject;
+        
+        NSString *key = [responseObject.keyEnumerator nextObject];
+        NSArray *temArray = responseObject[key];
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        
+    }];
 
+    
+//    
+//[[SDNetWorkTool sharedNetworkTool]GET:urlStr parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
+//
+//        responseObject;
+//        
+//        NSString *key = [responseObject.keyEnumerator nextObject];
+//        NSArray *temArray = responseObject[key];
+//    
+//} failure:^(NSURLSessionDataTask *task, NSError *error) {
+//    
+//    
+//}];
 
 
 }

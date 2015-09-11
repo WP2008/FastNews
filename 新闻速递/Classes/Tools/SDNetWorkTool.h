@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFHTTPSessionManager.h"
 
-@interface SDNetWorkTool : NSObject
+@interface SDNetWorkTool : AFHTTPSessionManager
+
++ (instancetype)sharedNetworkTool;
+
+
 
 @end

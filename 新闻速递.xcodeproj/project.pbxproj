@@ -76,6 +76,7 @@
 		85E1E55F1BA2C340005BEF7B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5341BA2C340005BEF7B /* UIImageView+WebCache.m */; };
 		85E1E5601BA2C340005BEF7B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5361BA2C340005BEF7B /* UIView+WebCacheOperation.m */; };
 		85E1E5631BA2C752005BEF7B /* SDNetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5621BA2C752005BEF7B /* SDNetWorkTool.m */; };
+		85E1E5661BA2CA22005BEF7B /* SDNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5651BA2CA22005BEF7B /* SDNewsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +234,8 @@
 		85E1E5361BA2C340005BEF7B /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		85E1E5611BA2C752005BEF7B /* SDNetWorkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNetWorkTool.h; sourceTree = "<group>"; };
 		85E1E5621BA2C752005BEF7B /* SDNetWorkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNetWorkTool.m; sourceTree = "<group>"; };
+		85E1E5641BA2CA22005BEF7B /* SDNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNewsCell.h; sourceTree = "<group>"; };
+		85E1E5651BA2CA22005BEF7B /* SDNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNewsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +464,8 @@
 			isa = PBXGroup;
 			children = (
 				85E1E4D91BA2C267005BEF7B /* SDNewsCell.xib */,
+				85E1E5641BA2CA22005BEF7B /* SDNewsCell.h */,
+				85E1E5651BA2CA22005BEF7B /* SDNewsCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -708,6 +713,7 @@
 				85AFE3BC1BA2885700988851 /* MASViewAttribute.m in Sources */,
 				85E1E53F1BA2C340005BEF7B /* AFURLSessionManager.m in Sources */,
 				85AFE17A1BA2699500988851 /* NSArray+Log.m in Sources */,
+				85E1E5661BA2CA22005BEF7B /* SDNewsCell.m in Sources */,
 				85E1E5551BA2C340005BEF7B /* SDWebImageDecoder.m in Sources */,
 				85AFE17F1BA26EE200988851 /* SDTitleLabel.m in Sources */,
 				85E1E55E1BA2C340005BEF7B /* UIImageView+HighlightedWebCache.m in Sources */,
