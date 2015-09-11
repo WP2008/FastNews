@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "SDNavigationController.h"
+#import "SDMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+    
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.window.backgroundColor = [UIColor grayColor];
+    SDMainViewController *mainVC = [[SDMainViewController alloc]init];
+    SDNavigationController *navi = [[SDNavigationController alloc]initWithRootViewController:mainVC];
+    self.window.rootViewController = navi;
+    [self.window makeKeyAndVisible];
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    app.statusBarStyle = UIStatusBarStyleLightContent;
+
+
     return YES;
 }
 

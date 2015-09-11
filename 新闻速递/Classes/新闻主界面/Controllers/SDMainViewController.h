@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SDMainViewController.h
 //  新闻速递
 //
 //  Created by tarena on 15/9/11.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SDMainViewController : UIViewController
 
 @end
-
