@@ -78,14 +78,13 @@ static NSString *const placeholderImage = @"302";
    CGFloat count =  [self.NewsModel.replyCount intValue];
    NSString *displayCount = nil;
     if (count) { // 数字不为0
-        if (count < 10000) { // 不足10000：直接显示数字，比如786、7986
-            displayCount = [NSString stringWithFormat:@"%f", count];
-        } else { // 达到10000：显示xx.x万，不要有.0的情况
-            double wan = count / 10000.0;
-            displayCount = [NSString stringWithFormat:@"%.1f万", wan];
-            // 将字符串里面的.0去掉
-            displayCount = [displayCount stringByReplacingOccurrencesOfString:@".0" withString:@""];
+        if (count > 10000) {
+            displayCount = [NSString stringWithFormat:@"%.1f万跟帖",count/10000];
+        }else{
+            displayCount = [NSString stringWithFormat:@"%.0f跟帖",count];
         }
+        self.lblReply.text = displayCount;
+        
     }
     self.lblReply.text = displayCount;
     

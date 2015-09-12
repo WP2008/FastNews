@@ -16,6 +16,8 @@
 #import "SDNewsModel.h"
 #import "SDNewsCell.h"
 
+#import "SDDetailViewController.h"
+
 typedef NS_ENUM(NSUInteger, SDLoadDataType) {
     SDLoadNewData,
     SDLoadMoreData,
@@ -26,6 +28,9 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
 
 /**   */
 @property(nonatomic,strong) NSMutableArray *arrayList;
+
+@property(nonatomic,getter=isFirstUpload)BOOL firstUpload;
+
 @end
 
 @implementation SDNewsTableViewController
@@ -39,15 +44,20 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
 //    [self.tableView setHeaderReleaseToRefreshText:@""];
      [self.tableView setFooterRefreshingText:@"给你讲以前的故事"];
 
+    self.firstUpload = YES;
     
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
 #warning  第一次滑动到这个view时 才调用
-    [self.tableView headerBeginRefreshing];
-    
- 
+  
+    if (self.isFirstUpload) {
+        [self.tableView headerBeginRefreshing];
+        self.firstUpload = NO;
+        
+    }
     
 }
 
@@ -164,6 +174,30 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+     NSInteger x = self.tableView.indexPathForSelectedRow.row;
+    SDNewsModel *selectedNews = self.arrayList[x];
+
+    if ([segue.destinationViewController isKindOfClass:[SDDetailViewController class]]) {
+        SDDetailViewController *detailVC =  segue.destinationViewController;
+        detailVC.newsModel = selectedNews;
+        detailVC.index = self.index;
+        
+        if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+            self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+        }
+    } else {
+    
+    
+    
+    }
+
+    
+}
+
 
 
 

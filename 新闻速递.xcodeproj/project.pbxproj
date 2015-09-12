@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		858A10AA1BA3D13700F1D017 /* SDNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10A21BA3D13700F1D017 /* SDNewsTableViewController.m */; };
+		858A10AB1BA3D13700F1D017 /* SDNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10A51BA3D13700F1D017 /* SDNewsModel.m */; };
+		858A10AD1BA3D13700F1D017 /* SDNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10A91BA3D13700F1D017 /* SDNewsCell.m */; };
+		858A10B51BA3D19C00F1D017 /* SDNews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 858A10B41BA3D19C00F1D017 /* SDNews.storyboard */; };
+		858A10B81BA3D1F100F1D017 /* SDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10B71BA3D1F100F1D017 /* SDDetailViewController.m */; };
+		858A10BB1BA3D5E200F1D017 /* SDDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10BA1BA3D5E200F1D017 /* SDDetailModel.m */; };
+		858A10BE1BA3D68700F1D017 /* SDDetailImgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10BD1BA3D68700F1D017 /* SDDetailImgModel.m */; };
+		858A10C11BA3DABC00F1D017 /* SDHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10C01BA3DABC00F1D017 /* SDHTTPManager.m */; };
+		858A10C81BA3E19F00F1D017 /* SDReplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10C71BA3E19F00F1D017 /* SDReplyModel.m */; };
 		85AFE1401BA263DB00988851 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AFE13F1BA263DB00988851 /* Images.xcassets */; };
 		85AFE1431BA263DB00988851 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85AFE1411BA263DB00988851 /* LaunchScreen.xib */; };
 		85AFE14F1BA263DB00988851 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AFE14E1BA263DB00988851 /* ____Tests.m */; };
@@ -19,8 +28,6 @@
 		85AFE17C1BA26AC600988851 /* NewsURLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85AFE17B1BA26AC600988851 /* NewsURLs.plist */; };
 		85AFE17F1BA26EE200988851 /* SDTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AFE17E1BA26EE200988851 /* SDTitleLabel.m */; };
 		85AFE1821BA26FAB00988851 /* SDCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AFE1811BA26FAB00988851 /* SDCount.m */; };
-		85E1E4D51BA2C158005BEF7B /* SDNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E4D21BA2C158005BEF7B /* SDNewsTableViewController.m */; };
-		85E1E4D81BA2C195005BEF7B /* SDNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E4D71BA2C195005BEF7B /* SDNewsModel.m */; };
 		85E1E5371BA2C340005BEF7B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E4DD1BA2C340005BEF7B /* AFHTTPRequestOperation.m */; };
 		85E1E5381BA2C340005BEF7B /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E4DF1BA2C340005BEF7B /* AFHTTPRequestOperationManager.m */; };
 		85E1E5391BA2C340005BEF7B /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E4E11BA2C340005BEF7B /* AFHTTPSessionManager.m */; };
@@ -64,11 +71,9 @@
 		85E1E55F1BA2C340005BEF7B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5341BA2C340005BEF7B /* UIImageView+WebCache.m */; };
 		85E1E5601BA2C340005BEF7B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5361BA2C340005BEF7B /* UIView+WebCacheOperation.m */; };
 		85E1E5631BA2C752005BEF7B /* SDNetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5621BA2C752005BEF7B /* SDNetWorkTool.m */; };
-		85E1E5661BA2CA22005BEF7B /* SDNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5651BA2CA22005BEF7B /* SDNewsCell.m */; };
 		85E1E56D1BA2F247005BEF7B /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5691BA2F247005BEF7B /* MBProgressHUD+MJ.m */; };
 		85E1E56E1BA2F247005BEF7B /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85E1E56A1BA2F247005BEF7B /* MBProgressHUD.bundle */; };
 		85E1E56F1BA2F247005BEF7B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E56C1BA2F247005BEF7B /* MBProgressHUD.m */; };
-		85E1E5711BA2F599005BEF7B /* SDNews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85E1E5701BA2F599005BEF7B /* SDNews.storyboard */; };
 		85E1E58D1BA30BA1005BEF7B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85E1E5731BA30BA1005BEF7B /* Info.plist */; };
 		85E1E58E1BA30BA1005BEF7B /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5751BA30BA1005BEF7B /* MASCompositeConstraint.m */; };
 		85E1E58F1BA30BA1005BEF7B /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E5781BA30BA1005BEF7B /* MASConstraint.m */; };
@@ -93,6 +98,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		858A10A11BA3D13700F1D017 /* SDNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNewsTableViewController.h; sourceTree = "<group>"; };
+		858A10A21BA3D13700F1D017 /* SDNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNewsTableViewController.m; sourceTree = "<group>"; };
+		858A10A41BA3D13700F1D017 /* SDNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNewsModel.h; sourceTree = "<group>"; };
+		858A10A51BA3D13700F1D017 /* SDNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNewsModel.m; sourceTree = "<group>"; };
+		858A10A81BA3D13700F1D017 /* SDNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNewsCell.h; sourceTree = "<group>"; };
+		858A10A91BA3D13700F1D017 /* SDNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNewsCell.m; sourceTree = "<group>"; };
+		858A10B41BA3D19C00F1D017 /* SDNews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SDNews.storyboard; sourceTree = "<group>"; };
+		858A10B61BA3D1F100F1D017 /* SDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDDetailViewController.h; sourceTree = "<group>"; };
+		858A10B71BA3D1F100F1D017 /* SDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDDetailViewController.m; sourceTree = "<group>"; };
+		858A10B91BA3D5E200F1D017 /* SDDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDDetailModel.h; sourceTree = "<group>"; };
+		858A10BA1BA3D5E200F1D017 /* SDDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDDetailModel.m; sourceTree = "<group>"; };
+		858A10BC1BA3D68700F1D017 /* SDDetailImgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDDetailImgModel.h; sourceTree = "<group>"; };
+		858A10BD1BA3D68700F1D017 /* SDDetailImgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDDetailImgModel.m; sourceTree = "<group>"; };
+		858A10BF1BA3DABC00F1D017 /* SDHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHTTPManager.h; sourceTree = "<group>"; };
+		858A10C01BA3DABC00F1D017 /* SDHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHTTPManager.m; sourceTree = "<group>"; };
+		858A10C61BA3E19F00F1D017 /* SDReplyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDReplyModel.h; sourceTree = "<group>"; };
+		858A10C71BA3E19F00F1D017 /* SDReplyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDReplyModel.m; sourceTree = "<group>"; };
 		85AFE12F1BA263DB00988851 /* 新闻速递.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新闻速递.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AFE1331BA263DB00988851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85AFE13F1BA263DB00988851 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -117,10 +139,6 @@
 		85AFE1801BA26FAB00988851 /* SDCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCount.h; sourceTree = "<group>"; };
 		85AFE1811BA26FAB00988851 /* SDCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCount.m; sourceTree = "<group>"; };
 		85AFE1871BA278B200988851 /* HYQiHei-50J.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HYQiHei-50J.ttf"; sourceTree = "<group>"; };
-		85E1E4D11BA2C158005BEF7B /* SDNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNewsTableViewController.h; sourceTree = "<group>"; };
-		85E1E4D21BA2C158005BEF7B /* SDNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNewsTableViewController.m; sourceTree = "<group>"; };
-		85E1E4D61BA2C195005BEF7B /* SDNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNewsModel.h; sourceTree = "<group>"; };
-		85E1E4D71BA2C195005BEF7B /* SDNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNewsModel.m; sourceTree = "<group>"; };
 		85E1E4DC1BA2C340005BEF7B /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		85E1E4DD1BA2C340005BEF7B /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		85E1E4DE1BA2C340005BEF7B /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -210,14 +228,11 @@
 		85E1E5361BA2C340005BEF7B /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		85E1E5611BA2C752005BEF7B /* SDNetWorkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNetWorkTool.h; sourceTree = "<group>"; };
 		85E1E5621BA2C752005BEF7B /* SDNetWorkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNetWorkTool.m; sourceTree = "<group>"; };
-		85E1E5641BA2CA22005BEF7B /* SDNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNewsCell.h; sourceTree = "<group>"; };
-		85E1E5651BA2CA22005BEF7B /* SDNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNewsCell.m; sourceTree = "<group>"; };
 		85E1E5681BA2F247005BEF7B /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		85E1E5691BA2F247005BEF7B /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		85E1E56A1BA2F247005BEF7B /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		85E1E56B1BA2F247005BEF7B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		85E1E56C1BA2F247005BEF7B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		85E1E5701BA2F599005BEF7B /* SDNews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SDNews.storyboard; sourceTree = "<group>"; };
 		85E1E5731BA30BA1005BEF7B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85E1E5741BA30BA1005BEF7B /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		85E1E5751BA30BA1005BEF7B /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
@@ -264,6 +279,113 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		858A109F1BA3D13700F1D017 /* MainNews */ = {
+			isa = PBXGroup;
+			children = (
+				858A10A01BA3D13700F1D017 /* Controllers */,
+				858A10A31BA3D13700F1D017 /* Models */,
+				858A10A61BA3D13700F1D017 /* Views */,
+			);
+			path = MainNews;
+			sourceTree = "<group>";
+		};
+		858A10A01BA3D13700F1D017 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				858A10A11BA3D13700F1D017 /* SDNewsTableViewController.h */,
+				858A10A21BA3D13700F1D017 /* SDNewsTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		858A10A31BA3D13700F1D017 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				858A10A41BA3D13700F1D017 /* SDNewsModel.h */,
+				858A10A51BA3D13700F1D017 /* SDNewsModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		858A10A61BA3D13700F1D017 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				858A10A81BA3D13700F1D017 /* SDNewsCell.h */,
+				858A10A91BA3D13700F1D017 /* SDNewsCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		858A10AE1BA3D16500F1D017 /* DetailNews */ = {
+			isa = PBXGroup;
+			children = (
+				858A10AF1BA3D16500F1D017 /* Controllers */,
+				858A10B01BA3D16500F1D017 /* Models */,
+				858A10B11BA3D16500F1D017 /* Views */,
+			);
+			path = DetailNews;
+			sourceTree = "<group>";
+		};
+		858A10AF1BA3D16500F1D017 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				858A10B61BA3D1F100F1D017 /* SDDetailViewController.h */,
+				858A10B71BA3D1F100F1D017 /* SDDetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		858A10B01BA3D16500F1D017 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				858A10B91BA3D5E200F1D017 /* SDDetailModel.h */,
+				858A10BA1BA3D5E200F1D017 /* SDDetailModel.m */,
+				858A10BC1BA3D68700F1D017 /* SDDetailImgModel.h */,
+				858A10BD1BA3D68700F1D017 /* SDDetailImgModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		858A10B11BA3D16500F1D017 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		858A10C21BA3E19000F1D017 /* ReplyNews */ = {
+			isa = PBXGroup;
+			children = (
+				858A10C31BA3E19000F1D017 /* Controllers */,
+				858A10C41BA3E19000F1D017 /* Models */,
+				858A10C51BA3E19000F1D017 /* Views */,
+			);
+			path = ReplyNews;
+			sourceTree = "<group>";
+		};
+		858A10C31BA3E19000F1D017 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		858A10C41BA3E19000F1D017 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				858A10C61BA3E19F00F1D017 /* SDReplyModel.h */,
+				858A10C71BA3E19F00F1D017 /* SDReplyModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		858A10C51BA3E19000F1D017 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		85AFE1261BA263DB00988851 = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +524,8 @@
 		85AFE16B1BA2661600988851 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				858A10BF1BA3DABC00F1D017 /* SDHTTPManager.h */,
+				858A10C01BA3DABC00F1D017 /* SDHTTPManager.m */,
 				85E1E5611BA2C752005BEF7B /* SDNetWorkTool.h */,
 				85E1E5621BA2C752005BEF7B /* SDNetWorkTool.m */,
 			);
@@ -411,39 +535,12 @@
 		85AFE1831BA2743700988851 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				85E1E4D01BA2C158005BEF7B /* Controllers */,
-				85E1E4D31BA2C158005BEF7B /* Models */,
-				85E1E4D41BA2C158005BEF7B /* Views */,
+				858A10B41BA3D19C00F1D017 /* SDNews.storyboard */,
+				858A109F1BA3D13700F1D017 /* MainNews */,
+				858A10AE1BA3D16500F1D017 /* DetailNews */,
+				858A10C21BA3E19000F1D017 /* ReplyNews */,
 			);
 			path = News;
-			sourceTree = "<group>";
-		};
-		85E1E4D01BA2C158005BEF7B /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				85E1E4D11BA2C158005BEF7B /* SDNewsTableViewController.h */,
-				85E1E4D21BA2C158005BEF7B /* SDNewsTableViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		85E1E4D31BA2C158005BEF7B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				85E1E4D61BA2C195005BEF7B /* SDNewsModel.h */,
-				85E1E4D71BA2C195005BEF7B /* SDNewsModel.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		85E1E4D41BA2C158005BEF7B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				85E1E5641BA2CA22005BEF7B /* SDNewsCell.h */,
-				85E1E5651BA2CA22005BEF7B /* SDNewsCell.m */,
-				85E1E5701BA2F599005BEF7B /* SDNews.storyboard */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		85E1E4DB1BA2C340005BEF7B /* AFNetworking */ = {
@@ -696,8 +793,8 @@
 			files = (
 				85AFE17C1BA26AC600988851 /* NewsURLs.plist in Resources */,
 				85E1E5491BA2C340005BEF7B /* MJRefresh.bundle in Resources */,
-				85E1E5711BA2F599005BEF7B /* SDNews.storyboard in Resources */,
 				85AFE1431BA263DB00988851 /* LaunchScreen.xib in Resources */,
+				858A10B51BA3D19C00F1D017 /* SDNews.storyboard in Resources */,
 				85AFE1401BA263DB00988851 /* Images.xcassets in Resources */,
 				85E1E56E1BA2F247005BEF7B /* MBProgressHUD.bundle in Resources */,
 				85E1E58D1BA30BA1005BEF7B /* Info.plist in Resources */,
@@ -726,22 +823,28 @@
 				85E1E5571BA2C340005BEF7B /* SDWebImageDownloaderOperation.m in Sources */,
 				85E1E53C1BA2C340005BEF7B /* AFURLConnectionOperation.m in Sources */,
 				85E1E5921BA30BA1005BEF7B /* MASViewAttribute.m in Sources */,
+				858A10AA1BA3D13700F1D017 /* SDNewsTableViewController.m in Sources */,
 				85E1E55D1BA2C340005BEF7B /* UIImage+WebP.m in Sources */,
+				858A10BB1BA3D5E200F1D017 /* SDDetailModel.m in Sources */,
 				85E1E5461BA2C340005BEF7B /* NSObject+MJKeyValue.m in Sources */,
 				85E1E5541BA2C340005BEF7B /* SDWebImageCompat.m in Sources */,
 				85AFE1771BA2698000988851 /* UIView+Extension.m in Sources */,
+				858A10AB1BA3D13700F1D017 /* SDNewsModel.m in Sources */,
 				85E1E54A1BA2C340005BEF7B /* MJRefreshBaseView.m in Sources */,
 				85E1E5591BA2C340005BEF7B /* SDWebImagePrefetcher.m in Sources */,
 				85E1E5901BA30BA1005BEF7B /* MASConstraintMaker.m in Sources */,
 				85E1E5531BA2C340005BEF7B /* SDImageCache.m in Sources */,
 				85E1E5631BA2C752005BEF7B /* SDNetWorkTool.m in Sources */,
 				85E1E53F1BA2C340005BEF7B /* AFURLSessionManager.m in Sources */,
+				858A10BE1BA3D68700F1D017 /* SDDetailImgModel.m in Sources */,
 				85AFE17A1BA2699500988851 /* NSArray+Log.m in Sources */,
-				85E1E5661BA2CA22005BEF7B /* SDNewsCell.m in Sources */,
+				858A10AD1BA3D13700F1D017 /* SDNewsCell.m in Sources */,
 				85E1E5551BA2C340005BEF7B /* SDWebImageDecoder.m in Sources */,
 				85E1E5971BA30BA1005BEF7B /* ViewController+MASAdditions.m in Sources */,
 				85AFE17F1BA26EE200988851 /* SDTitleLabel.m in Sources */,
 				85E1E55E1BA2C340005BEF7B /* UIImageView+HighlightedWebCache.m in Sources */,
+				858A10B81BA3D1F100F1D017 /* SDDetailViewController.m in Sources */,
+				858A10C11BA3DABC00F1D017 /* SDHTTPManager.m in Sources */,
 				85E1E56F1BA2F247005BEF7B /* MBProgressHUD.m in Sources */,
 				85E1E54F1BA2C340005BEF7B /* UIScrollView+MJRefresh.m in Sources */,
 				85E1E5911BA30BA1005BEF7B /* MASLayoutConstraint.m in Sources */,
@@ -768,15 +871,14 @@
 				85E1E54D1BA2C340005BEF7B /* MJRefreshHeaderView.m in Sources */,
 				85E1E5381BA2C340005BEF7B /* AFHTTPRequestOperationManager.m in Sources */,
 				85E1E5421BA2C340005BEF7B /* MJFoundation.m in Sources */,
-				85E1E4D51BA2C158005BEF7B /* SDNewsTableViewController.m in Sources */,
 				85E1E56D1BA2F247005BEF7B /* MBProgressHUD+MJ.m in Sources */,
 				85E1E5521BA2C340005BEF7B /* NSData+ImageContentType.m in Sources */,
 				85E1E5961BA30BA1005BEF7B /* View+MASAdditions.m in Sources */,
 				85AFE1821BA26FAB00988851 /* SDCount.m in Sources */,
 				85E1E54C1BA2C340005BEF7B /* MJRefreshFooterView.m in Sources */,
 				85E1E55A1BA2C340005BEF7B /* UIButton+WebCache.m in Sources */,
-				85E1E4D81BA2C195005BEF7B /* SDNewsModel.m in Sources */,
 				85AFE1681BA265A200988851 /* main.m in Sources */,
+				858A10C81BA3E19F00F1D017 /* SDReplyModel.m in Sources */,
 				85E1E5561BA2C340005BEF7B /* SDWebImageDownloader.m in Sources */,
 				85E1E53A1BA2C340005BEF7B /* AFNetworkReachabilityManager.m in Sources */,
 				85E1E58E1BA30BA1005BEF7B /* MASCompositeConstraint.m in Sources */,
