@@ -18,11 +18,13 @@
 
 #import "SDWeatherModel.h"
 #import "SDWeatherView.h"
+#import "SDWeatherDetailVC.h"
+
 #import "MJExtension.h"
 
 
 
-@interface SDMainViewController ()<UIScrollViewDelegate>
+@interface SDMainViewController ()<UIScrollViewDelegate , SDWeatherViewDelegate>
 
 /** 标题栏 */
 @property (weak, nonatomic)  UIScrollView *smallScrollView;
@@ -33,13 +35,14 @@
 /** 新闻接口的数组 */
 @property(nonatomic,strong) NSArray *arrayLists;
 
-
+@property (nonatomic, strong) UIButton *rightItemBtn;
 
 /** 天气部分 */
 @property(nonatomic,strong)SDWeatherModel *weatherModel;
 @property(nonatomic,assign,getter=isWeatherShow)BOOL weatherShow;
 @property(nonatomic,strong)SDWeatherView *weatherView;
 @property(nonatomic,strong)UIImageView *showAtHere;
+
 
 
 @end
@@ -118,6 +121,7 @@
     [rightItem addTarget:self action:@selector(rightItemClick:) forControlEvents:UIControlEventTouchUpInside];
     [rightItem setImage:[UIImage imageNamed:@"top_navigation_square"] forState:UIControlStateNormal];
 
+    self.rightItemBtn = rightItem;
 
 }
 
@@ -304,6 +308,7 @@
     
     // 设置天气界面
     SDWeatherView *weatherView = [SDWeatherView view];
+    weatherView.delegate  =  self;
     weatherView.weatherModel = self.weatherModel;
     self.weatherView = weatherView;
     weatherView.alpha = 0.9;
@@ -351,6 +356,7 @@
         self.weatherView.hidden = NO;
         self.showAtHere.hidden = NO;
         
+        //点击 后出发动画
         [self.weatherView addAnimate];
         
     [button setImage:[UIImage imageNamed:@"223"] forState:UIControlStateNormal];
@@ -367,13 +373,38 @@
 
         
     }
-    
-
-    
-    self.weatherShow = !self.isWeatherShow;
+     self.weatherShow = !self.isWeatherShow;
 }
 
 
+#pragma mark - weatherView delegate
+
+- (void)didClickWeatherView:(SDWeatherView *)weatherView {
+    
+    self.weatherShow = NO;
+    SDWeatherDetailVC *wdvc = [[SDWeatherDetailVC alloc]init];
+    wdvc.weatherModel = self.weatherModel;
+    [self.navigationController pushViewController:wdvc animated:YES];
+    
+    
+    [UIView animateWithDuration:0.1 animations:^{
+        self.weatherView.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.weatherView.alpha = 0.9;
+        
+        
+        // 不用时 hidden
+        self.weatherView.hidden = YES;
+        self.showAtHere.hidden = YES;
+       
+        
+        // 推出后设置一下按钮的状态
+         self.rightItemBtn.transform = CGAffineTransformIdentity;
+        [self.rightItemBtn setImage:[UIImage imageNamed:@"top_navigation_square"] forState:UIControlStateNormal];
+        
+    }];
+    
+}
 
 
 

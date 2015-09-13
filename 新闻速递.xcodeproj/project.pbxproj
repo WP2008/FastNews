@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8557F8021BA543F400898945 /* SDAnimationBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8011BA543F400898945 /* SDAnimationBtn.m */; };
+		8557F8021BA543F400898945 /* SDAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8011BA543F400898945 /* SDAnimationView.m */; };
+		8557F80A1BA5573500898945 /* SDWeatherDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8081BA5573500898945 /* SDWeatherDetailVC.m */; };
+		8557F80B1BA5573500898945 /* SDWeatherDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8557F8091BA5573500898945 /* SDWeatherDetailVC.xib */; };
+		8557F8111BA5696F00898945 /* LeftSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8101BA5696F00898945 /* LeftSlideViewController.m */; };
 		857550501BA528A000CA04B5 /* SDWeatherBgM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504B1BA528A000CA04B5 /* SDWeatherBgM.m */; };
 		857550511BA528A000CA04B5 /* SDWeatherDetailM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504D1BA528A000CA04B5 /* SDWeatherDetailM.m */; };
 		857550521BA528A000CA04B5 /* SDWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504F1BA528A000CA04B5 /* SDWeatherModel.m */; };
@@ -113,8 +116,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8557F8001BA543F400898945 /* SDAnimationBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAnimationBtn.h; sourceTree = "<group>"; };
-		8557F8011BA543F400898945 /* SDAnimationBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAnimationBtn.m; sourceTree = "<group>"; };
+		8557F8001BA543F400898945 /* SDAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAnimationView.h; sourceTree = "<group>"; };
+		8557F8011BA543F400898945 /* SDAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAnimationView.m; sourceTree = "<group>"; };
+		8557F8071BA5573500898945 /* SDWeatherDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherDetailVC.h; sourceTree = "<group>"; };
+		8557F8081BA5573500898945 /* SDWeatherDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherDetailVC.m; sourceTree = "<group>"; };
+		8557F8091BA5573500898945 /* SDWeatherDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDWeatherDetailVC.xib; sourceTree = "<group>"; };
+		8557F80F1BA5696F00898945 /* LeftSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSlideViewController.h; sourceTree = "<group>"; };
+		8557F8101BA5696F00898945 /* LeftSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSlideViewController.m; sourceTree = "<group>"; };
 		8575504A1BA528A000CA04B5 /* SDWeatherBgM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherBgM.h; sourceTree = "<group>"; };
 		8575504B1BA528A000CA04B5 /* SDWeatherBgM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherBgM.m; sourceTree = "<group>"; };
 		8575504C1BA528A000CA04B5 /* SDWeatherDetailM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherDetailM.h; sourceTree = "<group>"; };
@@ -321,21 +329,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8557F8061BA5572700898945 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8557F8071BA5573500898945 /* SDWeatherDetailVC.h */,
+				8557F8081BA5573500898945 /* SDWeatherDetailVC.m */,
+				8557F8091BA5573500898945 /* SDWeatherDetailVC.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		857550461BA5288600CA04B5 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				857550471BA5288600CA04B5 /* Controllers */,
+				8557F8061BA5572700898945 /* Controllers */,
 				857550481BA5288600CA04B5 /* Models */,
 				857550491BA5288600CA04B5 /* Views */,
 			);
 			path = Weather;
-			sourceTree = "<group>";
-		};
-		857550471BA5288600CA04B5 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		857550481BA5288600CA04B5 /* Models */ = {
@@ -360,8 +371,8 @@
 				857550581BA532BE00CA04B5 /* SDWeatherItemView.h */,
 				857550591BA532BE00CA04B5 /* SDWeatherItemView.m */,
 				8575505A1BA532BE00CA04B5 /* SDWeatherItemView.xib */,
-				8557F8001BA543F400898945 /* SDAnimationBtn.h */,
-				8557F8011BA543F400898945 /* SDAnimationBtn.m */,
+				8557F8001BA543F400898945 /* SDAnimationView.h */,
+				8557F8011BA543F400898945 /* SDAnimationView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -599,6 +610,8 @@
 		85AFE1601BA2659400988851 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8557F80F1BA5696F00898945 /* LeftSlideViewController.h */,
+				8557F8101BA5696F00898945 /* LeftSlideViewController.m */,
 				85AFE16C1BA266A900988851 /* SDNavigationController.h */,
 				85AFE16D1BA266A900988851 /* SDNavigationController.m */,
 				85AFE16F1BA267CE00988851 /* SDMainViewController.h */,
@@ -932,6 +945,7 @@
 				857550571BA5326600CA04B5 /* SDWeatherView.xib in Resources */,
 				85AFE1431BA263DB00988851 /* LaunchScreen.xib in Resources */,
 				858A10B51BA3D19C00F1D017 /* SDNews.storyboard in Resources */,
+				8557F80B1BA5573500898945 /* SDWeatherDetailVC.xib in Resources */,
 				85AFE1401BA263DB00988851 /* Images.xcassets in Resources */,
 				85E1E56E1BA2F247005BEF7B /* MBProgressHUD.bundle in Resources */,
 				85E1E58D1BA30BA1005BEF7B /* Info.plist in Resources */,
@@ -958,7 +972,7 @@
 				85E1E5931BA30BA1005BEF7B /* MASViewConstraint.m in Sources */,
 				85E1E55F1BA2C340005BEF7B /* UIImageView+WebCache.m in Sources */,
 				85E1E5571BA2C340005BEF7B /* SDWebImageDownloaderOperation.m in Sources */,
-				8557F8021BA543F400898945 /* SDAnimationBtn.m in Sources */,
+				8557F8021BA543F400898945 /* SDAnimationView.m in Sources */,
 				85E1E53C1BA2C340005BEF7B /* AFURLConnectionOperation.m in Sources */,
 				85E1E5921BA30BA1005BEF7B /* MASViewAttribute.m in Sources */,
 				858A10AA1BA3D13700F1D017 /* SDNewsTableViewController.m in Sources */,
@@ -1023,10 +1037,12 @@
 				85E1E5521BA2C340005BEF7B /* NSData+ImageContentType.m in Sources */,
 				85E1E5961BA30BA1005BEF7B /* View+MASAdditions.m in Sources */,
 				85AFE1821BA26FAB00988851 /* SDCount.m in Sources */,
+				8557F8111BA5696F00898945 /* LeftSlideViewController.m in Sources */,
 				85E1E54C1BA2C340005BEF7B /* MJRefreshFooterView.m in Sources */,
 				85E1E55A1BA2C340005BEF7B /* UIButton+WebCache.m in Sources */,
 				85AFE1681BA265A200988851 /* main.m in Sources */,
 				858A10C81BA3E19F00F1D017 /* SDReplyModel.m in Sources */,
+				8557F80A1BA5573500898945 /* SDWeatherDetailVC.m in Sources */,
 				85E1E5561BA2C340005BEF7B /* SDWebImageDownloader.m in Sources */,
 				85E1E53A1BA2C340005BEF7B /* AFNetworkReachabilityManager.m in Sources */,
 				85E1E58E1BA30BA1005BEF7B /* MASCompositeConstraint.m in Sources */,

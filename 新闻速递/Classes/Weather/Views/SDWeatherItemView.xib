@@ -15,7 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="j75-O9-K68" customClass="SXWeatherItemView">
+        <view contentMode="scaleToFill" id="j75-O9-K68" customClass="SDWeatherItemView">
             <rect key="frame" x="0.0" y="0.0" width="125" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

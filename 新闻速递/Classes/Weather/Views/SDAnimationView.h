@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SDAnimationBtn : UIView
+@interface SDAnimationView : UIView
 
-@property (nonatomic, strong, readonly) UIButton *button;
-@property (nonatomic, strong, readonly) UIImageView *iconImage;
+@property (nonatomic, weak, readonly) UILabel *titleLbl;
+@property (nonatomic, weak, readonly) UIButton *button;
+@property (nonatomic, weak, readonly) UIImageView *iconImage;
+@property (nonatomic, assign,getter=isAnimation) BOOL animation;
+
+
 
 - (instancetype)initWithTitle:(NSString *)title IconImageName:(NSString *)imageName BackgroundColor:(UIColor *)color;
 + (instancetype)buttonWithTitle:(NSString *)title IconImageName:(NSString *)imageName BackgroundColor:(UIColor *)color;
