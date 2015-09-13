@@ -17,6 +17,7 @@
 #import "SDNewsCell.h"
 
 #import "SDDetailViewController.h"
+#import "SDPhotoSetController.h"
 
 typedef NS_ENUM(NSUInteger, SDLoadDataType) {
     SDLoadNewData,
@@ -190,8 +191,9 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
             self.navigationController.interactivePopGestureRecognizer.delegate = nil;
         }
     } else {
-    
-    
+        
+        SDPhotoSetController *photoSetVC = segue.destinationViewController;
+        photoSetVC.newsModel = selectedNews;
     
     }
 

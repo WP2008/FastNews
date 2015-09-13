@@ -15,9 +15,11 @@
 #import "MBProgressHUD+MJ.h"
 #import "SDCount.h"
 
+#import "SDReplyViewController.h"
 #import "SDReplyModel.h"
 
 @interface SDDetailViewController ()<UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIView *navigationBar;
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
@@ -52,19 +54,23 @@
 
 #pragma mark -  返回按钮
 - (IBAction)backBtnClick:(id)sender {
+    [[UIApplication sharedApplication]setStatusBarHidden:NO];
+
     [self.navigationController popViewControllerAnimated:YES];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
-}
+
+    }
 
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     // statusbar  交由 UIApplication 管理 后 用此方法
+    [[UIApplication sharedApplication]setStatusBarHidden:YES];
+
+    self.navigationBar.backgroundColor = GlobalColor;
     
-    
-      self.automaticallyAdjustsScrollViewInsets = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     // http://c.m.163.com/nc/article/AHHQIG5B00014JB6/full.html
     self.webView.delegate = self;
@@ -110,6 +116,13 @@
     [self.navigationController setNavigationBarHidden:YES];
 
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+
+    // statusbar  交由 UIApplication 管理 后 用此方法
+    [[UIApplication sharedApplication]setStatusBarHidden:NO];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 
@@ -205,4 +218,64 @@
     }
     return body;
 }
+
+#pragma mark -  将发出通知时调用
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    NSString *url = request.URL.absoluteString;
+    NSRange range = [url rangeOfString:@"sx:src="];
+    if (range.location != NSNotFound) {
+        NSInteger begin = range.location + range.length;
+        NSString *src = [url substringFromIndex:begin];
+        [self savePictureToAlbum:src];
+        return NO;
+    }
+    return YES;
+}
+
+#pragma mark - 保存到相册方法
+- (void)savePictureToAlbum:(NSString *)src
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"确定要保存到相册吗？" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        
+        NSURLCache *cache =[NSURLCache sharedURLCache];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:src]];
+        NSData *imgData = [cache cachedResponseForRequest:request].data;
+        UIImage *image = [UIImage imageWithData:imgData];
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+        
+    }]];
+    
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+#pragma mark - 即将跳转时
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SDReplyViewController *replyVC = segue.destinationViewController;
+    replyVC.replys = self.replyModels;
+    
+    
+    
+    
+#warning 这句话是干什么呢
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
+    
+    
+}
+
+
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+}
+
 @end

@@ -9,11 +9,16 @@
 #import "SDMainViewController.h"
 #import "SDNewsTableViewController.h"
 #import "SDTitleLabel.h"
+#import "SDHTTPManager.h"
 
 #import "Masonry.h"
 #import "UIView+Extension.h"
 #import "SDCount.h"
 
+
+#import "SDWeatherModel.h"
+#import "SDWeatherView.h"
+#import "MJExtension.h"
 
 
 
@@ -27,6 +32,15 @@
 
 /** 新闻接口的数组 */
 @property(nonatomic,strong) NSArray *arrayLists;
+
+
+
+/** 天气部分 */
+@property(nonatomic,strong)SDWeatherModel *weatherModel;
+@property(nonatomic,assign,getter=isWeatherShow)BOOL weatherShow;
+@property(nonatomic,strong)SDWeatherView *weatherView;
+@property(nonatomic,strong)UIImageView *showAtHere;
+
 
 @end
 
@@ -74,9 +88,15 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
   
+    [self addNaviItem];
+    
     [self addNewsController];
     [self addLable];
     [self setScrollView];
+    // 获取天气数据
+    [self sendWeatherRequest];
+    
+    
 }
 
 
@@ -87,6 +107,21 @@
 
 
 #pragma mark  -  设置控件
+
+- (void)addNaviItem {
+    UIView *customView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 45, 45)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:customView];
+    UIButton *rightItem = [[UIButton alloc]init];
+     rightItem.width = 45;
+     rightItem.height = 45;
+    [customView addSubview:rightItem];
+    [rightItem addTarget:self action:@selector(rightItemClick:) forControlEvents:UIControlEventTouchUpInside];
+    [rightItem setImage:[UIImage imageNamed:@"top_navigation_square"] forState:UIControlStateNormal];
+
+
+}
+
+
 /** 添加子控制器 */
 - (void)addNewsController {
     for (int i=0 ; i<self.arrayLists.count ; i++){
@@ -245,6 +280,100 @@
 
 
 }
+
+
+#pragma mark - 天气界面的处理
+- (void)sendWeatherRequest
+{
+    NSString *url = @"http://c.3g.163.com/nc/weather/5YyX5LqsfOWMl%2BS6rA%3D%3D.html";
+    [[SDHTTPManager manager]GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+        
+        Log(@"%@",responseObject);
+        SDWeatherModel *weatherModel = [SDWeatherModel objectWithKeyValues:responseObject];
+        
+        self.weatherModel = weatherModel;
+       [self addWeather];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"failure %@",error);
+    }];
+}
+
+
+/** 添加天气信息 */
+- (void)addWeather{
+    
+    // 设置天气界面
+    SDWeatherView *weatherView = [SDWeatherView view];
+    weatherView.weatherModel = self.weatherModel;
+    self.weatherView = weatherView;
+    weatherView.alpha = 0.9;
+    
+    // 添加到window 的第一个view上 就一定是最上面
+    UIWindow *win = [UIApplication sharedApplication].windows.firstObject;
+    [win addSubview:weatherView];
+    weatherView.frame = [UIScreen mainScreen].bounds;
+    weatherView.y = 64;
+    weatherView.height -= 64;
+    self.weatherView.hidden = YES;
+    
+#warning 这是一个指示器 都放在 最上面
+    // 设置一个图标指示器
+    UIImageView *showAtHere = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"224"]];
+    self.showAtHere = showAtHere;
+    showAtHere.width = 7;
+    showAtHere.height = 7;
+    showAtHere.y = 57;
+    showAtHere.x = [UIScreen mainScreen].bounds.size.width - 45;
+    [win addSubview:showAtHere];
+    
+    self.showAtHere.hidden = YES;
+       
+}
+
+/** 右侧按钮的点击事件*/
+- (void)rightItemClick:(UIButton *)button {
+    
+    if (self.isWeatherShow) {
+        // 隐藏天气页面
+        self.weatherView.hidden = YES;
+        self.showAtHere.hidden = YES;
+
+        [UIView animateWithDuration:0.1 animations:^{
+            button.transform = CGAffineTransformRotate(button.transform, M_1_PI * 5);
+            
+        } completion:^(BOOL finished) {
+            [button setImage:[UIImage imageNamed:@"top_navigation_square"] forState:UIControlStateNormal];
+        }];
+    
+
+    } else {
+        // 显示天气页面
+        self.weatherView.hidden = NO;
+        self.showAtHere.hidden = NO;
+        
+        [self.weatherView addAnimate];
+        
+    [button setImage:[UIImage imageNamed:@"223"] forState:UIControlStateNormal];
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            button.transform = CGAffineTransformRotate(button.transform, -M_1_PI * 6);
+            
+        } completion:^(BOOL finished) {
+            
+            [UIView animateWithDuration:0.1 animations:^{
+                button.transform = CGAffineTransformRotate(button.transform, M_1_PI );
+            }];
+        }];
+
+        
+    }
+    
+
+    
+    self.weatherShow = !self.isWeatherShow;
+}
+
+
 
 
 

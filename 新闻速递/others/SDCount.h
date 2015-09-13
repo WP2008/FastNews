@@ -20,3 +20,4 @@
 // 随机色
 #define RandomColor WPColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
+#define GlobalColor [UIColor colorWithRed:0.988 green:0.373 blue:0.175 alpha:1.000]

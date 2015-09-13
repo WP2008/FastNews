@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8557F8021BA543F400898945 /* SDAnimationBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8011BA543F400898945 /* SDAnimationBtn.m */; };
+		857550501BA528A000CA04B5 /* SDWeatherBgM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504B1BA528A000CA04B5 /* SDWeatherBgM.m */; };
+		857550511BA528A000CA04B5 /* SDWeatherDetailM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504D1BA528A000CA04B5 /* SDWeatherDetailM.m */; };
+		857550521BA528A000CA04B5 /* SDWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504F1BA528A000CA04B5 /* SDWeatherModel.m */; };
+		857550561BA5326600CA04B5 /* SDWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 857550541BA5326600CA04B5 /* SDWeatherView.m */; };
+		857550571BA5326600CA04B5 /* SDWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 857550551BA5326600CA04B5 /* SDWeatherView.xib */; };
+		8575505B1BA532BE00CA04B5 /* SDWeatherItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 857550591BA532BE00CA04B5 /* SDWeatherItemView.m */; };
+		8575505C1BA532BE00CA04B5 /* SDWeatherItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8575505A1BA532BE00CA04B5 /* SDWeatherItemView.xib */; };
 		858A10AA1BA3D13700F1D017 /* SDNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10A21BA3D13700F1D017 /* SDNewsTableViewController.m */; };
 		858A10AB1BA3D13700F1D017 /* SDNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10A51BA3D13700F1D017 /* SDNewsModel.m */; };
 		858A10AD1BA3D13700F1D017 /* SDNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10A91BA3D13700F1D017 /* SDNewsCell.m */; };
@@ -16,6 +24,13 @@
 		858A10BE1BA3D68700F1D017 /* SDDetailImgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10BD1BA3D68700F1D017 /* SDDetailImgModel.m */; };
 		858A10C11BA3DABC00F1D017 /* SDHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10C01BA3DABC00F1D017 /* SDHTTPManager.m */; };
 		858A10C81BA3E19F00F1D017 /* SDReplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10C71BA3E19F00F1D017 /* SDReplyModel.m */; };
+		858A10CB1BA3F42300F1D017 /* SDReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10CA1BA3F42300F1D017 /* SDReplyViewController.m */; };
+		858A10CE1BA3F46500F1D017 /* SDReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10CD1BA3F46500F1D017 /* SDReplyCell.m */; };
+		858A10D21BA4126800F1D017 /* SDReplyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10D01BA4126800F1D017 /* SDReplyHeader.m */; };
+		858A10D31BA4126800F1D017 /* SDReplyHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 858A10D11BA4126800F1D017 /* SDReplyHeader.xib */; };
+		858A10DA1BA4148600F1D017 /* SDPhotoSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10D91BA4148600F1D017 /* SDPhotoSetController.m */; };
+		858A10DF1BA4214B00F1D017 /* SDPhotosDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10DC1BA4214B00F1D017 /* SDPhotosDetail.m */; };
+		858A10E01BA4214B00F1D017 /* SDPhotoSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A10DE1BA4214B00F1D017 /* SDPhotoSet.m */; };
 		85AFE1401BA263DB00988851 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AFE13F1BA263DB00988851 /* Images.xcassets */; };
 		85AFE1431BA263DB00988851 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85AFE1411BA263DB00988851 /* LaunchScreen.xib */; };
 		85AFE14F1BA263DB00988851 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AFE14E1BA263DB00988851 /* ____Tests.m */; };
@@ -98,6 +113,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8557F8001BA543F400898945 /* SDAnimationBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAnimationBtn.h; sourceTree = "<group>"; };
+		8557F8011BA543F400898945 /* SDAnimationBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAnimationBtn.m; sourceTree = "<group>"; };
+		8575504A1BA528A000CA04B5 /* SDWeatherBgM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherBgM.h; sourceTree = "<group>"; };
+		8575504B1BA528A000CA04B5 /* SDWeatherBgM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherBgM.m; sourceTree = "<group>"; };
+		8575504C1BA528A000CA04B5 /* SDWeatherDetailM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherDetailM.h; sourceTree = "<group>"; };
+		8575504D1BA528A000CA04B5 /* SDWeatherDetailM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherDetailM.m; sourceTree = "<group>"; };
+		8575504E1BA528A000CA04B5 /* SDWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherModel.h; sourceTree = "<group>"; };
+		8575504F1BA528A000CA04B5 /* SDWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherModel.m; sourceTree = "<group>"; };
+		857550531BA5326600CA04B5 /* SDWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherView.h; sourceTree = "<group>"; };
+		857550541BA5326600CA04B5 /* SDWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherView.m; sourceTree = "<group>"; };
+		857550551BA5326600CA04B5 /* SDWeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDWeatherView.xib; sourceTree = "<group>"; };
+		857550581BA532BE00CA04B5 /* SDWeatherItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherItemView.h; sourceTree = "<group>"; };
+		857550591BA532BE00CA04B5 /* SDWeatherItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherItemView.m; sourceTree = "<group>"; };
+		8575505A1BA532BE00CA04B5 /* SDWeatherItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDWeatherItemView.xib; sourceTree = "<group>"; };
 		858A10A11BA3D13700F1D017 /* SDNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNewsTableViewController.h; sourceTree = "<group>"; };
 		858A10A21BA3D13700F1D017 /* SDNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNewsTableViewController.m; sourceTree = "<group>"; };
 		858A10A41BA3D13700F1D017 /* SDNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNewsModel.h; sourceTree = "<group>"; };
@@ -115,6 +144,19 @@
 		858A10C01BA3DABC00F1D017 /* SDHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHTTPManager.m; sourceTree = "<group>"; };
 		858A10C61BA3E19F00F1D017 /* SDReplyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDReplyModel.h; sourceTree = "<group>"; };
 		858A10C71BA3E19F00F1D017 /* SDReplyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDReplyModel.m; sourceTree = "<group>"; };
+		858A10C91BA3F42300F1D017 /* SDReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDReplyViewController.h; sourceTree = "<group>"; };
+		858A10CA1BA3F42300F1D017 /* SDReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDReplyViewController.m; sourceTree = "<group>"; };
+		858A10CC1BA3F46500F1D017 /* SDReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDReplyCell.h; sourceTree = "<group>"; };
+		858A10CD1BA3F46500F1D017 /* SDReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDReplyCell.m; sourceTree = "<group>"; };
+		858A10CF1BA4126800F1D017 /* SDReplyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDReplyHeader.h; sourceTree = "<group>"; };
+		858A10D01BA4126800F1D017 /* SDReplyHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDReplyHeader.m; sourceTree = "<group>"; };
+		858A10D11BA4126800F1D017 /* SDReplyHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDReplyHeader.xib; sourceTree = "<group>"; };
+		858A10D81BA4148600F1D017 /* SDPhotoSetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoSetController.h; sourceTree = "<group>"; };
+		858A10D91BA4148600F1D017 /* SDPhotoSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoSetController.m; sourceTree = "<group>"; };
+		858A10DB1BA4214B00F1D017 /* SDPhotosDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotosDetail.h; sourceTree = "<group>"; };
+		858A10DC1BA4214B00F1D017 /* SDPhotosDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotosDetail.m; sourceTree = "<group>"; };
+		858A10DD1BA4214B00F1D017 /* SDPhotoSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoSet.h; sourceTree = "<group>"; };
+		858A10DE1BA4214B00F1D017 /* SDPhotoSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoSet.m; sourceTree = "<group>"; };
 		85AFE12F1BA263DB00988851 /* 新闻速递.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新闻速递.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AFE1331BA263DB00988851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85AFE13F1BA263DB00988851 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -279,6 +321,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		857550461BA5288600CA04B5 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				857550471BA5288600CA04B5 /* Controllers */,
+				857550481BA5288600CA04B5 /* Models */,
+				857550491BA5288600CA04B5 /* Views */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		857550471BA5288600CA04B5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		857550481BA5288600CA04B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8575504A1BA528A000CA04B5 /* SDWeatherBgM.h */,
+				8575504B1BA528A000CA04B5 /* SDWeatherBgM.m */,
+				8575504C1BA528A000CA04B5 /* SDWeatherDetailM.h */,
+				8575504D1BA528A000CA04B5 /* SDWeatherDetailM.m */,
+				8575504E1BA528A000CA04B5 /* SDWeatherModel.h */,
+				8575504F1BA528A000CA04B5 /* SDWeatherModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		857550491BA5288600CA04B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				857550531BA5326600CA04B5 /* SDWeatherView.h */,
+				857550541BA5326600CA04B5 /* SDWeatherView.m */,
+				857550551BA5326600CA04B5 /* SDWeatherView.xib */,
+				857550581BA532BE00CA04B5 /* SDWeatherItemView.h */,
+				857550591BA532BE00CA04B5 /* SDWeatherItemView.m */,
+				8575505A1BA532BE00CA04B5 /* SDWeatherItemView.xib */,
+				8557F8001BA543F400898945 /* SDAnimationBtn.h */,
+				8557F8011BA543F400898945 /* SDAnimationBtn.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		858A109F1BA3D13700F1D017 /* MainNews */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +453,8 @@
 		858A10C31BA3E19000F1D017 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				858A10C91BA3F42300F1D017 /* SDReplyViewController.h */,
+				858A10CA1BA3F42300F1D017 /* SDReplyViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -380,6 +469,48 @@
 			sourceTree = "<group>";
 		};
 		858A10C51BA3E19000F1D017 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				858A10CC1BA3F46500F1D017 /* SDReplyCell.h */,
+				858A10CD1BA3F46500F1D017 /* SDReplyCell.m */,
+				858A10CF1BA4126800F1D017 /* SDReplyHeader.h */,
+				858A10D01BA4126800F1D017 /* SDReplyHeader.m */,
+				858A10D11BA4126800F1D017 /* SDReplyHeader.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		858A10D41BA4145600F1D017 /* PhotoSet */ = {
+			isa = PBXGroup;
+			children = (
+				858A10D51BA4145600F1D017 /* Controllers */,
+				858A10D61BA4145600F1D017 /* Models */,
+				858A10D71BA4145600F1D017 /* Views */,
+			);
+			path = PhotoSet;
+			sourceTree = "<group>";
+		};
+		858A10D51BA4145600F1D017 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				858A10D81BA4148600F1D017 /* SDPhotoSetController.h */,
+				858A10D91BA4148600F1D017 /* SDPhotoSetController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		858A10D61BA4145600F1D017 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				858A10DB1BA4214B00F1D017 /* SDPhotosDetail.h */,
+				858A10DC1BA4214B00F1D017 /* SDPhotosDetail.m */,
+				858A10DD1BA4214B00F1D017 /* SDPhotoSet.h */,
+				858A10DE1BA4214B00F1D017 /* SDPhotoSet.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		858A10D71BA4145600F1D017 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -447,6 +578,7 @@
 			isa = PBXGroup;
 			children = (
 				85AFE1591BA264FC00988851 /* 新闻主界面 */,
+				857550461BA5288600CA04B5 /* Weather */,
 				85AFE1831BA2743700988851 /* News */,
 				85AFE1691BA2661600988851 /* Categorys */,
 				85AFE16A1BA2661600988851 /* Libs */,
@@ -539,6 +671,7 @@
 				858A109F1BA3D13700F1D017 /* MainNews */,
 				858A10AE1BA3D16500F1D017 /* DetailNews */,
 				858A10C21BA3E19000F1D017 /* ReplyNews */,
+				858A10D41BA4145600F1D017 /* PhotoSet */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -760,6 +893,7 @@
 				TargetAttributes = {
 					85AFE12E1BA263DB00988851 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = G56568L74Z;
 					};
 					85AFE1471BA263DB00988851 = {
 						CreatedOnToolsVersion = 6.3;
@@ -792,7 +926,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				85AFE17C1BA26AC600988851 /* NewsURLs.plist in Resources */,
+				8575505C1BA532BE00CA04B5 /* SDWeatherItemView.xib in Resources */,
 				85E1E5491BA2C340005BEF7B /* MJRefresh.bundle in Resources */,
+				858A10D31BA4126800F1D017 /* SDReplyHeader.xib in Resources */,
+				857550571BA5326600CA04B5 /* SDWeatherView.xib in Resources */,
 				85AFE1431BA263DB00988851 /* LaunchScreen.xib in Resources */,
 				858A10B51BA3D19C00F1D017 /* SDNews.storyboard in Resources */,
 				85AFE1401BA263DB00988851 /* Images.xcassets in Resources */,
@@ -821,15 +958,18 @@
 				85E1E5931BA30BA1005BEF7B /* MASViewConstraint.m in Sources */,
 				85E1E55F1BA2C340005BEF7B /* UIImageView+WebCache.m in Sources */,
 				85E1E5571BA2C340005BEF7B /* SDWebImageDownloaderOperation.m in Sources */,
+				8557F8021BA543F400898945 /* SDAnimationBtn.m in Sources */,
 				85E1E53C1BA2C340005BEF7B /* AFURLConnectionOperation.m in Sources */,
 				85E1E5921BA30BA1005BEF7B /* MASViewAttribute.m in Sources */,
 				858A10AA1BA3D13700F1D017 /* SDNewsTableViewController.m in Sources */,
 				85E1E55D1BA2C340005BEF7B /* UIImage+WebP.m in Sources */,
+				858A10DF1BA4214B00F1D017 /* SDPhotosDetail.m in Sources */,
 				858A10BB1BA3D5E200F1D017 /* SDDetailModel.m in Sources */,
 				85E1E5461BA2C340005BEF7B /* NSObject+MJKeyValue.m in Sources */,
 				85E1E5541BA2C340005BEF7B /* SDWebImageCompat.m in Sources */,
 				85AFE1771BA2698000988851 /* UIView+Extension.m in Sources */,
 				858A10AB1BA3D13700F1D017 /* SDNewsModel.m in Sources */,
+				857550561BA5326600CA04B5 /* SDWeatherView.m in Sources */,
 				85E1E54A1BA2C340005BEF7B /* MJRefreshBaseView.m in Sources */,
 				85E1E5591BA2C340005BEF7B /* SDWebImagePrefetcher.m in Sources */,
 				85E1E5901BA30BA1005BEF7B /* MASConstraintMaker.m in Sources */,
@@ -844,6 +984,7 @@
 				85AFE17F1BA26EE200988851 /* SDTitleLabel.m in Sources */,
 				85E1E55E1BA2C340005BEF7B /* UIImageView+HighlightedWebCache.m in Sources */,
 				858A10B81BA3D1F100F1D017 /* SDDetailViewController.m in Sources */,
+				8575505B1BA532BE00CA04B5 /* SDWeatherItemView.m in Sources */,
 				858A10C11BA3DABC00F1D017 /* SDHTTPManager.m in Sources */,
 				85E1E56F1BA2F247005BEF7B /* MBProgressHUD.m in Sources */,
 				85E1E54F1BA2C340005BEF7B /* UIScrollView+MJRefresh.m in Sources */,
@@ -852,7 +993,9 @@
 				85E1E5431BA2C340005BEF7B /* MJProperty.m in Sources */,
 				85E1E53B1BA2C340005BEF7B /* AFSecurityPolicy.m in Sources */,
 				85E1E5441BA2C340005BEF7B /* MJType.m in Sources */,
+				857550511BA528A000CA04B5 /* SDWeatherDetailM.m in Sources */,
 				85E1E55C1BA2C340005BEF7B /* UIImage+MultiFormat.m in Sources */,
+				857550501BA528A000CA04B5 /* SDWeatherBgM.m in Sources */,
 				85E1E5511BA2C340005BEF7B /* MKAnnotationView+WebCache.m in Sources */,
 				85E1E5371BA2C340005BEF7B /* AFHTTPRequestOperation.m in Sources */,
 				85E1E5451BA2C340005BEF7B /* NSObject+MJCoding.m in Sources */,
@@ -860,9 +1003,13 @@
 				85E1E5941BA30BA1005BEF7B /* NSArray+MASAdditions.m in Sources */,
 				85E1E5601BA2C340005BEF7B /* UIView+WebCacheOperation.m in Sources */,
 				85E1E5581BA2C340005BEF7B /* SDWebImageManager.m in Sources */,
+				858A10D21BA4126800F1D017 /* SDReplyHeader.m in Sources */,
 				85E1E5471BA2C340005BEF7B /* NSObject+MJProperty.m in Sources */,
+				858A10E01BA4214B00F1D017 /* SDPhotoSet.m in Sources */,
 				85AFE1711BA267CE00988851 /* SDMainViewController.m in Sources */,
+				858A10CE1BA3F46500F1D017 /* SDReplyCell.m in Sources */,
 				85E1E54B1BA2C340005BEF7B /* MJRefreshConst.m in Sources */,
+				858A10DA1BA4148600F1D017 /* SDPhotoSetController.m in Sources */,
 				85E1E5391BA2C340005BEF7B /* AFHTTPSessionManager.m in Sources */,
 				85E1E5481BA2C340005BEF7B /* NSString+MJExtension.m in Sources */,
 				85AFE16E1BA266A900988851 /* SDNavigationController.m in Sources */,
@@ -871,6 +1018,7 @@
 				85E1E54D1BA2C340005BEF7B /* MJRefreshHeaderView.m in Sources */,
 				85E1E5381BA2C340005BEF7B /* AFHTTPRequestOperationManager.m in Sources */,
 				85E1E5421BA2C340005BEF7B /* MJFoundation.m in Sources */,
+				857550521BA528A000CA04B5 /* SDWeatherModel.m in Sources */,
 				85E1E56D1BA2F247005BEF7B /* MBProgressHUD+MJ.m in Sources */,
 				85E1E5521BA2C340005BEF7B /* NSData+ImageContentType.m in Sources */,
 				85E1E5961BA30BA1005BEF7B /* View+MASAdditions.m in Sources */,
@@ -883,6 +1031,7 @@
 				85E1E53A1BA2C340005BEF7B /* AFNetworkReachabilityManager.m in Sources */,
 				85E1E58E1BA30BA1005BEF7B /* MASCompositeConstraint.m in Sources */,
 				85E1E53E1BA2C340005BEF7B /* AFURLResponseSerialization.m in Sources */,
+				858A10CB1BA3F42300F1D017 /* SDReplyViewController.m in Sources */,
 				85E1E5411BA2C340005BEF7B /* MJExtensionConst.m in Sources */,
 				85AFE1671BA265A200988851 /* AppDelegate.m in Sources */,
 			);
@@ -1002,10 +1151,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "新闻速递/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tarena.fastNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1013,10 +1166,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "新闻速递/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tarena.fastNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

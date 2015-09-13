@@ -7,6 +7,7 @@
 //
 
 #import "SDNavigationController.h"
+#import "SDCount.h"
 
 @interface SDNavigationController ()
 
@@ -17,7 +18,8 @@
 + (void)initialize {
     // 设置导航栏的主题
     UINavigationBar *navBar = [UINavigationBar appearance];
-    [navBar setBarTintColor:[UIColor redColor]];
+    [navBar setBarTintColor:GlobalColor];
+
 
 }
 
