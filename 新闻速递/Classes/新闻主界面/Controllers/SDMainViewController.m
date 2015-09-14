@@ -109,6 +109,9 @@
     [self sendWeatherRequest];
     
     
+    self.title = @"新闻速递";
+ 
+    
 }
 
 
@@ -231,7 +234,6 @@
 - (void)swipeToShowLeftView:(UISwipeGestureRecognizer *)swipe {
 
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-     NSLog(@"swipe to right");
 }
 
 // 代理完成 多个手势并存

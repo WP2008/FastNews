@@ -7,10 +7,10 @@
 //
 
 #import "SDLeftViewController.h"
+#import "MBProgressHUD+MJ.h"
 
-@interface SDLeftViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface SDLeftViewController ()
 
-@property (nonatomic,weak) UITableView *tableView;
 
 @end
 
@@ -19,62 +19,71 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    //这个view 就成文 背景视图了
-    
-    // 加入的tableView 会缩放
-    UITableView *tableview = [[UITableView alloc] init];
-    [self.view addSubview:tableview];
-    self.tableView = tableview;
-    tableview.frame = self.view.bounds;
-    tableview.dataSource = self;
-    tableview.delegate  = self;
-    tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+ //  self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
    
+    [self addFirstGroup];
     
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 7;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *Identifier = @"Identifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-    }
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    cell.textLabel.font = [UIFont systemFontOfSize:20.0f];
-    cell.backgroundColor = [UIColor grayColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
+    [self addSecondGroup];
 
     
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"开通会员";
-    } else if (indexPath.row == 1) {
-        cell.textLabel.text = @"QQ钱包";
-    } else if (indexPath.row == 2) {
-        cell.textLabel.text = @"网上营业厅";
-    } else if (indexPath.row == 3) {
-        cell.textLabel.text = @"个性装扮";
-    } else if (indexPath.row == 4) {
-        cell.textLabel.text = @"我的收藏";
-    } else if (indexPath.row == 5) {
-        cell.textLabel.text = @"我的相册";
-    } else if (indexPath.row == 6) {
-        cell.textLabel.text = @"我的文件";
-    }
-    return cell;
 }
+
+- (void)addFirstGroup {
+    
+    // 🐷设置跳转的控制器
+    WPSettingArrowItem *item1 = [WPSettingArrowItem itemWithTitle:@"推送和通知" icon:@"MorePush" destVcClass:[UIViewController class]];
+    
+    WPSettingSwitchItem *item2 = [WPSettingSwitchItem  itemWithTitle:@"摇一摇机选" icon:@"handShake"];
+    WPSettingSwitchItem *item3 = [WPSettingSwitchItem itemWithTitle:@"声音效果" icon:@"sound_Effect" ];
+    WPSettingGroup *firstGroup = [WPSettingGroup new];
+    firstGroup.items = @[item1,item2,item3];
+    firstGroup.headerTitle = @"通知";
+    firstGroup.footerTitle = @"结束";
+    
+    
+    [self.dataList addObject:firstGroup];
+    
+}
+
+- (void)addSecondGroup {
+    
+    WPSettingItem *item4 = [WPSettingArrowItem itemWithTitle:@"检查新版本 " icon:@"MoreUpdate"];
+    //🐷添加一段功能
+    item4.option = ^{
+        // 1.  显示蒙板
+        [MBProgressHUD showMessage:@"正在检查更新..."];
+        
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 2. 掩藏蒙板
+            [MBProgressHUD hideHUD];
+            
+            // 3. 提示用户
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"有更新版本" message:nil delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"立即更新", nil];
+            [alertView show];
+            
+        });
+    };
+    
+    
+    
+    WPSettingItem *item5 = [WPSettingArrowItem itemWithTitle:@"帮助" icon:@"MoreHelp" destVcClass:[UIViewController class]];
+    WPSettingItem *item6 = [WPSettingArrowItem itemWithTitle:@"分享" icon:@"MoreShare" destVcClass:[UITableViewController class]];
+    WPSettingArrowItem *item7 = [WPSettingArrowItem itemWithTitle:@"产品推荐" icon:@"MoreNetease" destVcClass:[UITableViewController class]];
+    WPSettingArrowItem *item8 = [WPSettingArrowItem itemWithTitle:@"关于" icon:@"MoreAbout" destVcClass:[UITableViewController class]];
+    
+    
+    WPSettingGroup *secondGroup = [WPSettingGroup new];
+    secondGroup.items = @[item4,item5,item6,item7,item8];
+    secondGroup.headerTitle = @"abc";
+    secondGroup.footerTitle = @"abc";
+    
+    [self.dataList addObject:secondGroup];
+    
+}
+
+#pragma mark - Table view data source   父类去做
+
 
 
 @end

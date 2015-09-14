@@ -11,6 +11,7 @@
 #import "SDMainViewController.h"
 #import "SDLeftViewController.h"
 #import "MMDrawerController.h"
+#import "SDCount.h"
 
 @interface AppDelegate ()
 
@@ -34,12 +35,14 @@
  
     
     SDLeftViewController *leftVC = [[SDLeftViewController alloc]init];
-    SDNavigationController *leftNavi = [[SDNavigationController alloc]initWithRootViewController:leftVC];
 
-    self.drawerController  = [[MMDrawerController alloc] initWithCenterViewController:mainNavi leftDrawerViewController:leftNavi];
+
+    self.drawerController  = [[MMDrawerController alloc] initWithCenterViewController:mainNavi leftDrawerViewController:leftVC];
     
     [self.drawerController setShowsShadow:YES];
-    [self.drawerController setMaximumRightDrawerWidth:200.0];
+    
+   // [self.drawerController setMaximumRightDrawerWidth:200.0];
+    [self.drawerController setMaximumLeftDrawerWidth:320];
     //设置 动画效果 不拉伸
     self.drawerController.shouldStretchDrawer = NO;
     // 所有的视图都能打卡关闭抽屉
@@ -62,8 +65,9 @@
 //      return YES;
 //    }];
 //    
-
-    self.window.backgroundColor = [UIColor whiteColor];
+    UIColor * tintColor = [UIColor whiteColor];
+    [self.window setTintColor:tintColor];
+    self.window.backgroundColor = tintColor;
     self.window.rootViewController = self.drawerController;
     
     

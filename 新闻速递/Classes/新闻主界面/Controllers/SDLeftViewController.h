@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface SDLeftViewController : UIViewController
+#import "WPBaseTableViewController.h"
+@interface SDLeftViewController : WPBaseTableViewController
 
 @end
