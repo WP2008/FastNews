@@ -10,7 +10,11 @@
 		8557F8021BA543F400898945 /* SDAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8011BA543F400898945 /* SDAnimationView.m */; };
 		8557F80A1BA5573500898945 /* SDWeatherDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8081BA5573500898945 /* SDWeatherDetailVC.m */; };
 		8557F80B1BA5573500898945 /* SDWeatherDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8557F8091BA5573500898945 /* SDWeatherDetailVC.xib */; };
-		8557F8111BA5696F00898945 /* LeftSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8101BA5696F00898945 /* LeftSlideViewController.m */; };
+		8557F8141BA5745300898945 /* SDLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8131BA5745300898945 /* SDLeftViewController.m */; };
+		855EE7731BA658C600BC5556 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 855EE76B1BA658C600BC5556 /* MMDrawerBarButtonItem.m */; };
+		855EE7741BA658C600BC5556 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 855EE76E1BA658C600BC5556 /* MMDrawerController.m */; };
+		855EE7751BA658C600BC5556 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 855EE7701BA658C600BC5556 /* MMDrawerVisualState.m */; };
+		855EE7761BA658C600BC5556 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 855EE7721BA658C600BC5556 /* UIViewController+MMDrawerController.m */; };
 		857550501BA528A000CA04B5 /* SDWeatherBgM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504B1BA528A000CA04B5 /* SDWeatherBgM.m */; };
 		857550511BA528A000CA04B5 /* SDWeatherDetailM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504D1BA528A000CA04B5 /* SDWeatherDetailM.m */; };
 		857550521BA528A000CA04B5 /* SDWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504F1BA528A000CA04B5 /* SDWeatherModel.m */; };
@@ -121,8 +125,17 @@
 		8557F8071BA5573500898945 /* SDWeatherDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherDetailVC.h; sourceTree = "<group>"; };
 		8557F8081BA5573500898945 /* SDWeatherDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherDetailVC.m; sourceTree = "<group>"; };
 		8557F8091BA5573500898945 /* SDWeatherDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDWeatherDetailVC.xib; sourceTree = "<group>"; };
-		8557F80F1BA5696F00898945 /* LeftSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSlideViewController.h; sourceTree = "<group>"; };
-		8557F8101BA5696F00898945 /* LeftSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSlideViewController.m; sourceTree = "<group>"; };
+		8557F8121BA5745300898945 /* SDLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLeftViewController.h; sourceTree = "<group>"; };
+		8557F8131BA5745300898945 /* SDLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLeftViewController.m; sourceTree = "<group>"; };
+		855EE76A1BA658C600BC5556 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		855EE76B1BA658C600BC5556 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		855EE76C1BA658C600BC5556 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		855EE76D1BA658C600BC5556 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		855EE76E1BA658C600BC5556 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		855EE76F1BA658C600BC5556 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		855EE7701BA658C600BC5556 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		855EE7711BA658C600BC5556 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		855EE7721BA658C600BC5556 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		8575504A1BA528A000CA04B5 /* SDWeatherBgM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherBgM.h; sourceTree = "<group>"; };
 		8575504B1BA528A000CA04B5 /* SDWeatherBgM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherBgM.m; sourceTree = "<group>"; };
 		8575504C1BA528A000CA04B5 /* SDWeatherDetailM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherDetailM.h; sourceTree = "<group>"; };
@@ -337,6 +350,53 @@
 				8557F8091BA5573500898945 /* SDWeatherDetailVC.xib */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		855EE7691BA658C600BC5556 /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				855EE76A1BA658C600BC5556 /* MMDrawerBarButtonItem.h */,
+				855EE76B1BA658C600BC5556 /* MMDrawerBarButtonItem.m */,
+				855EE76C1BA658C600BC5556 /* MMDrawerController+Subclass.h */,
+				855EE76D1BA658C600BC5556 /* MMDrawerController.h */,
+				855EE76E1BA658C600BC5556 /* MMDrawerController.m */,
+				855EE76F1BA658C600BC5556 /* MMDrawerVisualState.h */,
+				855EE7701BA658C600BC5556 /* MMDrawerVisualState.m */,
+				855EE7711BA658C600BC5556 /* UIViewController+MMDrawerController.h */,
+				855EE7721BA658C600BC5556 /* UIViewController+MMDrawerController.m */,
+			);
+			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		855EE7771BA68EE600BC5556 /* set(设置界面) */ = {
+			isa = PBXGroup;
+			children = (
+				855EE7781BA68EE600BC5556 /* Controllers */,
+				855EE7791BA68EE600BC5556 /* Models */,
+				855EE77A1BA68EE600BC5556 /* Views */,
+			);
+			path = "set(设置界面)";
+			sourceTree = "<group>";
+		};
+		855EE7781BA68EE600BC5556 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		855EE7791BA68EE600BC5556 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		855EE77A1BA68EE600BC5556 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		857550461BA5288600CA04B5 /* Weather */ = {
@@ -589,6 +649,7 @@
 			isa = PBXGroup;
 			children = (
 				85AFE1591BA264FC00988851 /* 新闻主界面 */,
+				855EE7771BA68EE600BC5556 /* set(设置界面) */,
 				857550461BA5288600CA04B5 /* Weather */,
 				85AFE1831BA2743700988851 /* News */,
 				85AFE1691BA2661600988851 /* Categorys */,
@@ -610,8 +671,8 @@
 		85AFE1601BA2659400988851 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8557F80F1BA5696F00898945 /* LeftSlideViewController.h */,
-				8557F8101BA5696F00898945 /* LeftSlideViewController.m */,
+				8557F8121BA5745300898945 /* SDLeftViewController.h */,
+				8557F8131BA5745300898945 /* SDLeftViewController.m */,
 				85AFE16C1BA266A900988851 /* SDNavigationController.h */,
 				85AFE16D1BA266A900988851 /* SDNavigationController.m */,
 				85AFE16F1BA267CE00988851 /* SDMainViewController.h */,
@@ -655,6 +716,7 @@
 		85AFE16A1BA2661600988851 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				855EE7691BA658C600BC5556 /* MMDrawerController */,
 				85E1E5721BA30BA1005BEF7B /* Masonry */,
 				85E1E5671BA2F247005BEF7B /* MBProgressHUD */,
 				85E1E4DB1BA2C340005BEF7B /* AFNetworking */,
@@ -976,6 +1038,7 @@
 				85E1E53C1BA2C340005BEF7B /* AFURLConnectionOperation.m in Sources */,
 				85E1E5921BA30BA1005BEF7B /* MASViewAttribute.m in Sources */,
 				858A10AA1BA3D13700F1D017 /* SDNewsTableViewController.m in Sources */,
+				855EE7741BA658C600BC5556 /* MMDrawerController.m in Sources */,
 				85E1E55D1BA2C340005BEF7B /* UIImage+WebP.m in Sources */,
 				858A10DF1BA4214B00F1D017 /* SDPhotosDetail.m in Sources */,
 				858A10BB1BA3D5E200F1D017 /* SDDetailModel.m in Sources */,
@@ -997,6 +1060,7 @@
 				85E1E5971BA30BA1005BEF7B /* ViewController+MASAdditions.m in Sources */,
 				85AFE17F1BA26EE200988851 /* SDTitleLabel.m in Sources */,
 				85E1E55E1BA2C340005BEF7B /* UIImageView+HighlightedWebCache.m in Sources */,
+				8557F8141BA5745300898945 /* SDLeftViewController.m in Sources */,
 				858A10B81BA3D1F100F1D017 /* SDDetailViewController.m in Sources */,
 				8575505B1BA532BE00CA04B5 /* SDWeatherItemView.m in Sources */,
 				858A10C11BA3DABC00F1D017 /* SDHTTPManager.m in Sources */,
@@ -1010,10 +1074,12 @@
 				857550511BA528A000CA04B5 /* SDWeatherDetailM.m in Sources */,
 				85E1E55C1BA2C340005BEF7B /* UIImage+MultiFormat.m in Sources */,
 				857550501BA528A000CA04B5 /* SDWeatherBgM.m in Sources */,
+				855EE7761BA658C600BC5556 /* UIViewController+MMDrawerController.m in Sources */,
 				85E1E5511BA2C340005BEF7B /* MKAnnotationView+WebCache.m in Sources */,
 				85E1E5371BA2C340005BEF7B /* AFHTTPRequestOperation.m in Sources */,
 				85E1E5451BA2C340005BEF7B /* NSObject+MJCoding.m in Sources */,
 				85E1E55B1BA2C340005BEF7B /* UIImage+GIF.m in Sources */,
+				855EE7731BA658C600BC5556 /* MMDrawerBarButtonItem.m in Sources */,
 				85E1E5941BA30BA1005BEF7B /* NSArray+MASAdditions.m in Sources */,
 				85E1E5601BA2C340005BEF7B /* UIView+WebCacheOperation.m in Sources */,
 				85E1E5581BA2C340005BEF7B /* SDWebImageManager.m in Sources */,
@@ -1031,13 +1097,13 @@
 				85E1E5501BA2C340005BEF7B /* UIView+MJExtension.m in Sources */,
 				85E1E54D1BA2C340005BEF7B /* MJRefreshHeaderView.m in Sources */,
 				85E1E5381BA2C340005BEF7B /* AFHTTPRequestOperationManager.m in Sources */,
+				855EE7751BA658C600BC5556 /* MMDrawerVisualState.m in Sources */,
 				85E1E5421BA2C340005BEF7B /* MJFoundation.m in Sources */,
 				857550521BA528A000CA04B5 /* SDWeatherModel.m in Sources */,
 				85E1E56D1BA2F247005BEF7B /* MBProgressHUD+MJ.m in Sources */,
 				85E1E5521BA2C340005BEF7B /* NSData+ImageContentType.m in Sources */,
 				85E1E5961BA30BA1005BEF7B /* View+MASAdditions.m in Sources */,
 				85AFE1821BA26FAB00988851 /* SDCount.m in Sources */,
-				8557F8111BA5696F00898945 /* LeftSlideViewController.m in Sources */,
 				85E1E54C1BA2C340005BEF7B /* MJRefreshFooterView.m in Sources */,
 				85E1E55A1BA2C340005BEF7B /* UIButton+WebCache.m in Sources */,
 				85AFE1681BA265A200988851 /* main.m in Sources */,

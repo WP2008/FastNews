@@ -22,9 +22,10 @@
 
 #import "MJExtension.h"
 
+#import "MMDrawerBarButtonItem.h"
+#import "UIViewController+MMDrawerController.h"
 
-
-@interface SDMainViewController ()<UIScrollViewDelegate , SDWeatherViewDelegate>
+@interface SDMainViewController ()<UIScrollViewDelegate , SDWeatherViewDelegate,UIGestureRecognizerDelegate>
 
 /** 标题栏 */
 @property (weak, nonatomic)  UIScrollView *smallScrollView;
@@ -68,10 +69,14 @@
 
         _smallScrollView.showsHorizontalScrollIndicator = NO;
         _smallScrollView.showsVerticalScrollIndicator = NO;
-        _smallScrollView.backgroundColor = [UIColor clearColor];
+        _smallScrollView.backgroundColor = [UIColor whiteColor];
+        _smallScrollView.bounces = NO;
+        
     }
     return _smallScrollView;
 }
+
+
 
 - (UIScrollView *)bigScrollView {
     if ( _bigScrollView == nil) {
@@ -81,7 +86,8 @@
         _bigScrollView.delegate = self;
         _bigScrollView.showsHorizontalScrollIndicator = NO;
         _bigScrollView.pagingEnabled = YES;
-    
+        _bigScrollView.bounces = NO;
+        _bigScrollView.backgroundColor = [UIColor grayColor];
     }
     return _bigScrollView;
 }
@@ -92,6 +98,9 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
   
     [self addNaviItem];
+    
+    [self setupLeftMenuButton];
+    
     
     [self addNewsController];
     [self addLable];
@@ -112,17 +121,23 @@
 #pragma mark  -  设置控件
 
 - (void)addNaviItem {
-    UIView *customView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 45, 45)];
+    UIView *customView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:customView];
     UIButton *rightItem = [[UIButton alloc]init];
-     rightItem.width = 45;
-     rightItem.height = 45;
+     rightItem.width = 35 ;
+     rightItem.height = 35;
     [customView addSubview:rightItem];
     [rightItem addTarget:self action:@selector(rightItemClick:) forControlEvents:UIControlEventTouchUpInside];
     [rightItem setImage:[UIImage imageNamed:@"top_navigation_square"] forState:UIControlStateNormal];
 
     self.rightItemBtn = rightItem;
+ 
 
+}
+
+-(void)setupLeftMenuButton{
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
 }
 
 
@@ -180,7 +195,7 @@
         make.width.and.centerX.equalTo(self.view);
     
     }];
-    
+
     
     [self.bigScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(self.view);
@@ -198,10 +213,33 @@
     UIViewController *vc = [self.childViewControllers firstObject];
     vc.view.frame = self.bigScrollView.bounds;
     [self.bigScrollView addSubview:vc.view];
+    
+    
+    //添加手势
+    UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToShowLeftView:)];
+    swipeGestureRecognizer.delegate = self;
+    swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [vc.view addGestureRecognizer:swipeGestureRecognizer];
+    
+    //设置label
     SDTitleLabel *lable = [self.smallScrollView.subviews firstObject];
     lable.scale = 1.0;
   
 }
+
+/** 向右拖的效果 */
+- (void)swipeToShowLeftView:(UISwipeGestureRecognizer *)swipe {
+
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+     NSLog(@"swipe to right");
+}
+
+// 代理完成 多个手势并存
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    
+    return YES;
+}
+
 
 
 /** 标题栏label的点击事件 */
@@ -334,6 +372,14 @@
     self.showAtHere.hidden = YES;
        
 }
+
+
+
+#pragma mark - Button click
+-(void)leftDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
 
 /** 右侧按钮的点击事件*/
 - (void)rightItemClick:(UIButton *)button {

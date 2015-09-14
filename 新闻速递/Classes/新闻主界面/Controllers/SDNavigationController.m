@@ -8,7 +8,7 @@
 
 #import "SDNavigationController.h"
 #import "SDCount.h"
-
+#import "UIViewController+MMDrawerController.h"
 @interface SDNavigationController ()
 
 @end
@@ -27,6 +27,15 @@
     [super viewDidLoad];
     
     
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    if(self.mm_drawerController.showsStatusBarBackgroundView){
+        return UIStatusBarStyleLightContent;
+    }
+    else {
+        return UIStatusBarStyleLightContent;
+    }
 }
 
 

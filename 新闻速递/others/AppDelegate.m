@@ -9,8 +9,12 @@
 #import "AppDelegate.h"
 #import "SDNavigationController.h"
 #import "SDMainViewController.h"
+#import "SDLeftViewController.h"
+#import "MMDrawerController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic,strong) MMDrawerController * drawerController;
 
 @end
 
@@ -22,18 +26,53 @@
     
     
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    _window.backgroundColor = [UIColor whiteColor];
-    SDMainViewController *mainVC = [[SDMainViewController alloc]init];
-    SDNavigationController *navi = [[SDNavigationController alloc]initWithRootViewController:mainVC];
-    self.window.rootViewController = navi;
     [self.window makeKeyAndVisible];
     
-    UIApplication *app = [UIApplication sharedApplication];
-    app.statusBarStyle = UIStatusBarStyleLightContent;
+    
+    SDMainViewController *mainVC = [[SDMainViewController alloc]init];
+    SDNavigationController *mainNavi = [[SDNavigationController alloc]initWithRootViewController:mainVC];
+ 
+    
+    SDLeftViewController *leftVC = [[SDLeftViewController alloc]init];
+    SDNavigationController *leftNavi = [[SDNavigationController alloc]initWithRootViewController:leftVC];
 
+    self.drawerController  = [[MMDrawerController alloc] initWithCenterViewController:mainNavi leftDrawerViewController:leftNavi];
+    
+    [self.drawerController setShowsShadow:YES];
+    [self.drawerController setMaximumRightDrawerWidth:200.0];
+    //设置 动画效果 不拉伸
+    self.drawerController.shouldStretchDrawer = NO;
+    // 所有的视图都能打卡关闭抽屉
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    // 设置视觉效果的block
+    [self.drawerController
+     setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+         UIViewController * sideDrawerViewController = drawerController.leftDrawerViewController;
+         
+         [sideDrawerViewController.view setAlpha:percentVisible];
+       
+    
+     }];
+    
+    // 设置可以点击否
+//    [self.drawerController setGestureShouldRecognizeTouchBlock:^BOOL(MMDrawerController *drawerController, UIGestureRecognizer *gesture, UITouch *touch) {
+//        
+//      return YES;
+//    }];
+//    
 
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = self.drawerController;
+    
+    
     return YES;
 }
+
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
