@@ -87,8 +87,9 @@
         _bigScrollView.showsHorizontalScrollIndicator = NO;
         _bigScrollView.pagingEnabled = YES;
         _bigScrollView.bounces = NO;
-        _bigScrollView.backgroundColor = [UIColor grayColor];
+        _bigScrollView.backgroundColor = [UIColor colorWithWhite:0.947 alpha:1.000];
     }
+    
     return _bigScrollView;
 }
 
@@ -110,7 +111,7 @@
     
     
     self.title = @"新闻速递";
- 
+
     
 }
 
@@ -124,6 +125,7 @@
 #pragma mark  -  设置控件
 
 - (void)addNaviItem {
+    
     UIView *customView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:customView];
     UIButton *rightItem = [[UIButton alloc]init];
@@ -390,7 +392,8 @@
         // 隐藏天气页面
         self.weatherView.hidden = YES;
         self.showAtHere.hidden = YES;
-
+       
+        
         [UIView animateWithDuration:0.1 animations:^{
             button.transform = CGAffineTransformRotate(button.transform, M_1_PI * 5);
             
@@ -421,7 +424,17 @@
 
         
     }
+    
+   
      self.weatherShow = !self.isWeatherShow;
+}
+
+
+- (void)setWeatherShow:(BOOL)weatherShow {
+    _weatherShow = weatherShow;
+    self.navigationItem.leftBarButtonItem.enabled = !_weatherShow;
+
+    
 }
 
 

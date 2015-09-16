@@ -248,9 +248,10 @@
     // 如果这个相框里还没有照片才添加
     if (photoImgView.image == nil) {
         
-#warning 要换成别的
+#warning TODO 要换成别的
         
-        [photoImgView sd_setImageWithURL:purl placeholderImage:[UIImage imageNamed:@"photoview_image_default_white"]];
+        
+        [photoImgView sd_setImageWithURL:purl placeholderImage:[UIImage imageNamed:@"food_image_default"]];
     }
     
 }

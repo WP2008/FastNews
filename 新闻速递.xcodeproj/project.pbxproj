@@ -22,6 +22,17 @@
 		855EE7891BA69C5A00BC5556 /* WPSettingLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 855EE7881BA69C5A00BC5556 /* WPSettingLabelItem.m */; };
 		855EE78C1BA69D9F00BC5556 /* WPSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 855EE78B1BA69D9F00BC5556 /* WPSettingCell.m */; };
 		855EE78F1BA6A03E00BC5556 /* WPSettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 855EE78E1BA6A03E00BC5556 /* WPSettingArrowItem.m */; };
+		855EE7921BA6EAF400BC5556 /* SDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 855EE7911BA6EAF400BC5556 /* SDSettingViewController.m */; };
+		855EE79A1BA6EE9E00BC5556 /* UIImage+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 855EE7991BA6EE9E00BC5556 /* UIImage+Tool.m */; };
+		8571AA451BA80C4C00C75D8C /* HMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571AA441BA80C4C00C75D8C /* HMAboutViewController.m */; };
+		8571AA491BA80C6100C75D8C /* HMProductCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571AA481BA80C6100C75D8C /* HMProductCollectionViewController.m */; };
+		8571AA5A1BA80CE600C75D8C /* HMProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571AA551BA80CE600C75D8C /* HMProduct.m */; };
+		8571AA5B1BA80CE600C75D8C /* HMProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571AA581BA80CE600C75D8C /* HMProductCell.m */; };
+		8571AA5C1BA80CE600C75D8C /* HMProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8571AA591BA80CE600C75D8C /* HMProductCell.xib */; };
+		8571AA5E1BA80D2A00C75D8C /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 8571AA5D1BA80D2A00C75D8C /* products.json */; };
+		8571AA631BA80D6C00C75D8C /* ILAboutHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571AA611BA80D6C00C75D8C /* ILAboutHeaderView.m */; };
+		8571AA641BA80D6C00C75D8C /* ILAboutHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8571AA621BA80D6C00C75D8C /* ILAboutHeaderView.xib */; };
+		8571AA691BA80ED300C75D8C /* HMShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8571AA681BA80ED300C75D8C /* HMShareViewController.m */; };
 		857550501BA528A000CA04B5 /* SDWeatherBgM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504B1BA528A000CA04B5 /* SDWeatherBgM.m */; };
 		857550511BA528A000CA04B5 /* SDWeatherDetailM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504D1BA528A000CA04B5 /* SDWeatherDetailM.m */; };
 		857550521BA528A000CA04B5 /* SDWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8575504F1BA528A000CA04B5 /* SDWeatherModel.m */; };
@@ -157,6 +168,25 @@
 		855EE78B1BA69D9F00BC5556 /* WPSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPSettingCell.m; sourceTree = "<group>"; };
 		855EE78D1BA6A03E00BC5556 /* WPSettingArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPSettingArrowItem.h; sourceTree = "<group>"; };
 		855EE78E1BA6A03E00BC5556 /* WPSettingArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPSettingArrowItem.m; sourceTree = "<group>"; };
+		855EE7901BA6EAF400BC5556 /* SDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSettingViewController.h; sourceTree = "<group>"; };
+		855EE7911BA6EAF400BC5556 /* SDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSettingViewController.m; sourceTree = "<group>"; };
+		855EE7981BA6EE9E00BC5556 /* UIImage+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tool.h"; sourceTree = "<group>"; };
+		855EE7991BA6EE9E00BC5556 /* UIImage+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tool.m"; sourceTree = "<group>"; };
+		8571AA431BA80C4C00C75D8C /* HMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAboutViewController.h; sourceTree = "<group>"; };
+		8571AA441BA80C4C00C75D8C /* HMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAboutViewController.m; sourceTree = "<group>"; };
+		8571AA471BA80C6100C75D8C /* HMProductCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMProductCollectionViewController.h; sourceTree = "<group>"; };
+		8571AA481BA80C6100C75D8C /* HMProductCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProductCollectionViewController.m; sourceTree = "<group>"; };
+		8571AA541BA80CE600C75D8C /* HMProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMProduct.h; sourceTree = "<group>"; };
+		8571AA551BA80CE600C75D8C /* HMProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProduct.m; sourceTree = "<group>"; };
+		8571AA571BA80CE600C75D8C /* HMProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMProductCell.h; sourceTree = "<group>"; };
+		8571AA581BA80CE600C75D8C /* HMProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProductCell.m; sourceTree = "<group>"; };
+		8571AA591BA80CE600C75D8C /* HMProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMProductCell.xib; sourceTree = "<group>"; };
+		8571AA5D1BA80D2A00C75D8C /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		8571AA601BA80D6C00C75D8C /* ILAboutHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILAboutHeaderView.h; sourceTree = "<group>"; };
+		8571AA611BA80D6C00C75D8C /* ILAboutHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILAboutHeaderView.m; sourceTree = "<group>"; };
+		8571AA621BA80D6C00C75D8C /* ILAboutHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ILAboutHeaderView.xib; sourceTree = "<group>"; };
+		8571AA671BA80ED300C75D8C /* HMShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMShareViewController.h; sourceTree = "<group>"; };
+		8571AA681BA80ED300C75D8C /* HMShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMShareViewController.m; sourceTree = "<group>"; };
 		8575504A1BA528A000CA04B5 /* SDWeatherBgM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherBgM.h; sourceTree = "<group>"; };
 		8575504B1BA528A000CA04B5 /* SDWeatherBgM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWeatherBgM.m; sourceTree = "<group>"; };
 		8575504C1BA528A000CA04B5 /* SDWeatherDetailM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherDetailM.h; sourceTree = "<group>"; };
@@ -404,6 +434,11 @@
 			children = (
 				855EE77B1BA696C800BC5556 /* WPBaseTableViewController.h */,
 				855EE77C1BA696C800BC5556 /* WPBaseTableViewController.m */,
+				855EE7901BA6EAF400BC5556 /* SDSettingViewController.h */,
+				855EE7911BA6EAF400BC5556 /* SDSettingViewController.m */,
+				8571AA661BA80ED300C75D8C /* Share */,
+				8571AA461BA80C6100C75D8C /* Product */,
+				8571AA421BA80C4C00C75D8C /* About */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -432,6 +467,65 @@
 				855EE78B1BA69D9F00BC5556 /* WPSettingCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8571AA421BA80C4C00C75D8C /* About */ = {
+			isa = PBXGroup;
+			children = (
+				8571AA5F1BA80D6C00C75D8C /* AboutHeaderView */,
+				8571AA431BA80C4C00C75D8C /* HMAboutViewController.h */,
+				8571AA441BA80C4C00C75D8C /* HMAboutViewController.m */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		8571AA461BA80C6100C75D8C /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				8571AA531BA80CE600C75D8C /* SDProductModel */,
+				8571AA561BA80CE600C75D8C /* SDProductView */,
+				8571AA471BA80C6100C75D8C /* HMProductCollectionViewController.h */,
+				8571AA481BA80C6100C75D8C /* HMProductCollectionViewController.m */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		8571AA531BA80CE600C75D8C /* SDProductModel */ = {
+			isa = PBXGroup;
+			children = (
+				8571AA541BA80CE600C75D8C /* HMProduct.h */,
+				8571AA551BA80CE600C75D8C /* HMProduct.m */,
+			);
+			path = SDProductModel;
+			sourceTree = "<group>";
+		};
+		8571AA561BA80CE600C75D8C /* SDProductView */ = {
+			isa = PBXGroup;
+			children = (
+				8571AA571BA80CE600C75D8C /* HMProductCell.h */,
+				8571AA581BA80CE600C75D8C /* HMProductCell.m */,
+				8571AA591BA80CE600C75D8C /* HMProductCell.xib */,
+			);
+			path = SDProductView;
+			sourceTree = "<group>";
+		};
+		8571AA5F1BA80D6C00C75D8C /* AboutHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				8571AA601BA80D6C00C75D8C /* ILAboutHeaderView.h */,
+				8571AA611BA80D6C00C75D8C /* ILAboutHeaderView.m */,
+				8571AA621BA80D6C00C75D8C /* ILAboutHeaderView.xib */,
+			);
+			path = AboutHeaderView;
+			sourceTree = "<group>";
+		};
+		8571AA661BA80ED300C75D8C /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				8571AA671BA80ED300C75D8C /* HMShareViewController.h */,
+				8571AA681BA80ED300C75D8C /* HMShareViewController.m */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 		857550461BA5288600CA04B5 /* Weather */ = {
@@ -654,6 +748,7 @@
 		85AFE1321BA263DB00988851 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8571AA5D1BA80D2A00C75D8C /* products.json */,
 				85AFE1411BA263DB00988851 /* LaunchScreen.xib */,
 				85AFE13F1BA263DB00988851 /* Images.xcassets */,
 				85AFE1871BA278B200988851 /* HYQiHei-50J.ttf */,
@@ -684,9 +779,9 @@
 			isa = PBXGroup;
 			children = (
 				85AFE1591BA264FC00988851 /* 新闻主界面 */,
-				855EE7771BA68EE600BC5556 /* set(设置界面) */,
-				857550461BA5288600CA04B5 /* Weather */,
 				85AFE1831BA2743700988851 /* News */,
+				857550461BA5288600CA04B5 /* Weather */,
+				855EE7771BA68EE600BC5556 /* set(设置界面) */,
 				85AFE1691BA2661600988851 /* Categorys */,
 				85AFE16A1BA2661600988851 /* Libs */,
 				85AFE16B1BA2661600988851 /* Tools */,
@@ -740,6 +835,8 @@
 		85AFE1691BA2661600988851 /* Categorys */ = {
 			isa = PBXGroup;
 			children = (
+				855EE7981BA6EE9E00BC5556 /* UIImage+Tool.h */,
+				855EE7991BA6EE9E00BC5556 /* UIImage+Tool.m */,
 				85AFE1781BA2699500988851 /* NSArray+Log.h */,
 				85AFE1791BA2699500988851 /* NSArray+Log.m */,
 				85AFE1741BA2698000988851 /* UIView+Extension.h */,
@@ -1035,7 +1132,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8571AA641BA80D6C00C75D8C /* ILAboutHeaderView.xib in Resources */,
+				8571AA5C1BA80CE600C75D8C /* HMProductCell.xib in Resources */,
 				85AFE17C1BA26AC600988851 /* NewsURLs.plist in Resources */,
+				8571AA5E1BA80D2A00C75D8C /* products.json in Resources */,
 				8575505C1BA532BE00CA04B5 /* SDWeatherItemView.xib in Resources */,
 				85E1E5491BA2C340005BEF7B /* MJRefresh.bundle in Resources */,
 				858A10D31BA4126800F1D017 /* SDReplyHeader.xib in Resources */,
@@ -1084,6 +1184,7 @@
 				85AFE1771BA2698000988851 /* UIView+Extension.m in Sources */,
 				858A10AB1BA3D13700F1D017 /* SDNewsModel.m in Sources */,
 				857550561BA5326600CA04B5 /* SDWeatherView.m in Sources */,
+				8571AA451BA80C4C00C75D8C /* HMAboutViewController.m in Sources */,
 				85E1E54A1BA2C340005BEF7B /* MJRefreshBaseView.m in Sources */,
 				85E1E5591BA2C340005BEF7B /* SDWebImagePrefetcher.m in Sources */,
 				85E1E5901BA30BA1005BEF7B /* MASConstraintMaker.m in Sources */,
@@ -1095,7 +1196,9 @@
 				858A10AD1BA3D13700F1D017 /* SDNewsCell.m in Sources */,
 				855EE7891BA69C5A00BC5556 /* WPSettingLabelItem.m in Sources */,
 				85E1E5551BA2C340005BEF7B /* SDWebImageDecoder.m in Sources */,
+				8571AA5B1BA80CE600C75D8C /* HMProductCell.m in Sources */,
 				855EE7861BA69C0400BC5556 /* WPSettingSwitchItem.m in Sources */,
+				8571AA691BA80ED300C75D8C /* HMShareViewController.m in Sources */,
 				85E1E5971BA30BA1005BEF7B /* ViewController+MASAdditions.m in Sources */,
 				855EE78C1BA69D9F00BC5556 /* WPSettingCell.m in Sources */,
 				85AFE17F1BA26EE200988851 /* SDTitleLabel.m in Sources */,
@@ -1104,6 +1207,7 @@
 				858A10B81BA3D1F100F1D017 /* SDDetailViewController.m in Sources */,
 				8575505B1BA532BE00CA04B5 /* SDWeatherItemView.m in Sources */,
 				858A10C11BA3DABC00F1D017 /* SDHTTPManager.m in Sources */,
+				8571AA491BA80C6100C75D8C /* HMProductCollectionViewController.m in Sources */,
 				85E1E56F1BA2F247005BEF7B /* MBProgressHUD.m in Sources */,
 				85E1E54F1BA2C340005BEF7B /* UIScrollView+MJRefresh.m in Sources */,
 				855EE77D1BA696C800BC5556 /* WPBaseTableViewController.m in Sources */,
@@ -1128,13 +1232,16 @@
 				85E1E5471BA2C340005BEF7B /* NSObject+MJProperty.m in Sources */,
 				858A10E01BA4214B00F1D017 /* SDPhotoSet.m in Sources */,
 				85AFE1711BA267CE00988851 /* SDMainViewController.m in Sources */,
+				8571AA631BA80D6C00C75D8C /* ILAboutHeaderView.m in Sources */,
 				858A10CE1BA3F46500F1D017 /* SDReplyCell.m in Sources */,
 				85E1E54B1BA2C340005BEF7B /* MJRefreshConst.m in Sources */,
 				858A10DA1BA4148600F1D017 /* SDPhotoSetController.m in Sources */,
 				85E1E5391BA2C340005BEF7B /* AFHTTPSessionManager.m in Sources */,
 				85E1E5481BA2C340005BEF7B /* NSString+MJExtension.m in Sources */,
+				855EE79A1BA6EE9E00BC5556 /* UIImage+Tool.m in Sources */,
 				85AFE16E1BA266A900988851 /* SDNavigationController.m in Sources */,
 				85E1E58F1BA30BA1005BEF7B /* MASConstraint.m in Sources */,
+				855EE7921BA6EAF400BC5556 /* SDSettingViewController.m in Sources */,
 				85E1E5501BA2C340005BEF7B /* UIView+MJExtension.m in Sources */,
 				85E1E54D1BA2C340005BEF7B /* MJRefreshHeaderView.m in Sources */,
 				85E1E5381BA2C340005BEF7B /* AFHTTPRequestOperationManager.m in Sources */,
@@ -1151,6 +1258,7 @@
 				858A10C81BA3E19F00F1D017 /* SDReplyModel.m in Sources */,
 				8557F80A1BA5573500898945 /* SDWeatherDetailVC.m in Sources */,
 				85E1E5561BA2C340005BEF7B /* SDWebImageDownloader.m in Sources */,
+				8571AA5A1BA80CE600C75D8C /* HMProduct.m in Sources */,
 				855EE7831BA69AE900BC5556 /* WPSettingItem.m in Sources */,
 				85E1E53A1BA2C340005BEF7B /* AFNetworkReachabilityManager.m in Sources */,
 				85E1E58E1BA30BA1005BEF7B /* MASCompositeConstraint.m in Sources */,

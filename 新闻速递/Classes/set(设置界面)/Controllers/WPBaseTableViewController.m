@@ -7,7 +7,6 @@
 //
 
 #import "WPBaseTableViewController.h"
-#import "UIViewController+MMDrawerController.h"
 
 
 @interface WPBaseTableViewController ()
@@ -89,6 +88,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     WPSettingGroup *group = self.dataList[indexPath.section];
     WPSettingItem *item = group.items[indexPath.row];
     
@@ -110,10 +111,8 @@
             
             //  Class class = NSStringFromClass(@"viewController");
             VC.title = item.title;
-   
-           UINavigationController *navi =  self.mm_drawerController.centerViewController;
-            [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
-            [navi pushViewController:VC animated:YES];
+
+            [self.navigationController pushViewController:VC animated:YES];
             
           
             

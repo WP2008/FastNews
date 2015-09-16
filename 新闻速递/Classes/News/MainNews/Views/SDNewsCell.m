@@ -17,7 +17,7 @@
 #import "UIImageView+WebCache.h"
 
 
-static NSString *const placeholderImage = @"302";
+static NSString *const placeholderImage = @"food_image_default";
 
 @interface SDNewsCell ()
 /**

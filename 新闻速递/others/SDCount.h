@@ -20,4 +20,6 @@
 // 随机色
 #define RandomColor WPColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
-#define GlobalColor [UIColor orangeColor]
+#define GlobalColor [UIColor redColor]
+
+extern NSInteger  const leftDrawerWidth;

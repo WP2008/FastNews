@@ -19,8 +19,16 @@
     // 设置导航栏的主题
     UINavigationBar *navBar = [UINavigationBar appearance];
     [navBar setBarTintColor:GlobalColor];
-
-
+    NSShadow *shadow = [[NSShadow alloc]init];
+    shadow.shadowColor = [UIColor yellowColor];
+    shadow.shadowOffset = CGSizeMake(0, 2);
+    
+    NSDictionary *dict = @{
+                           NSForegroundColorAttributeName:[UIColor whiteColor],
+                           NSFontAttributeName:[UIFont systemFontOfSize:22],
+                       
+                           };
+    [navBar setTitleTextAttributes:dict];
 }
 
 - (void)viewDidLoad {

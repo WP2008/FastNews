@@ -25,29 +25,38 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+    });
+    
+   
     
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    [self.window makeKeyAndVisible];
+
+     UIColor * tintColor = [UIColor whiteColor];
+    [self.window setTintColor:tintColor];
+     self.window.backgroundColor = tintColor;
     
+    [self.window makeKeyAndVisible];
     
     SDMainViewController *mainVC = [[SDMainViewController alloc]init];
     SDNavigationController *mainNavi = [[SDNavigationController alloc]initWithRootViewController:mainVC];
- 
-    
     SDLeftViewController *leftVC = [[SDLeftViewController alloc]init];
-
-
+    
+    
     self.drawerController  = [[MMDrawerController alloc] initWithCenterViewController:mainNavi leftDrawerViewController:leftVC];
+    
     
     [self.drawerController setShowsShadow:YES];
     
    // [self.drawerController setMaximumRightDrawerWidth:200.0];
-    [self.drawerController setMaximumLeftDrawerWidth:320];
+    [self.drawerController setMaximumLeftDrawerWidth:leftDrawerWidth];
     //设置 动画效果 不拉伸
     self.drawerController.shouldStretchDrawer = NO;
     // 所有的视图都能打卡关闭抽屉
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
     
     // 设置视觉效果的block
     [self.drawerController
@@ -65,9 +74,7 @@
 //      return YES;
 //    }];
 //    
-    UIColor * tintColor = [UIColor whiteColor];
-    [self.window setTintColor:tintColor];
-    self.window.backgroundColor = tintColor;
+
     self.window.rootViewController = self.drawerController;
     
     

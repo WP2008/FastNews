@@ -8,9 +8,23 @@
 
 #import "SDLeftViewController.h"
 #import "MBProgressHUD+MJ.h"
+#import "Masonry.h"
+#import "UIImage+Tool.h"
+#import "UIView+Extension.h"
+#import "SDCount.h"
+#import "UIViewController+MMDrawerController.h"
 
-@interface SDLeftViewController ()
 
+
+#import "SDSettingViewController.h"
+
+@interface SDLeftViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic, weak) UIView *headerView;
+
+@property (nonatomic, weak) UITableView *tableView;
+
+@property (nonatomic, weak) UIView *buttomView;
 
 @end
 
@@ -18,71 +32,201 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
- //  self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
-   
-    [self addFirstGroup];
-    
-    [self addSecondGroup];
 
+    self.view.backgroundColor = [UIColor whiteColor];
+    // 添加约束
+    [self addConstraints];
+    [self addHeaderButton];
+    
+     self.navigationController.navigationBarHidden = YES;
+
+  
     
 }
 
-- (void)addFirstGroup {
-    
-    // 🐷设置跳转的控制器
-    WPSettingArrowItem *item1 = [WPSettingArrowItem itemWithTitle:@"推送和通知" icon:@"MorePush" destVcClass:[UIViewController class]];
-    
-    WPSettingSwitchItem *item2 = [WPSettingSwitchItem  itemWithTitle:@"摇一摇机选" icon:@"handShake"];
-    WPSettingSwitchItem *item3 = [WPSettingSwitchItem itemWithTitle:@"声音效果" icon:@"sound_Effect" ];
-    WPSettingGroup *firstGroup = [WPSettingGroup new];
-    firstGroup.items = @[item1,item2,item3];
-    firstGroup.headerTitle = @"通知";
-    firstGroup.footerTitle = @"结束";
-    
-    
-    [self.dataList addObject:firstGroup];
-    
+#pragma mark - lazy loading 
+
+- (UIView *)headerView {
+    if ( _headerView == nil) {
+        UIView *view = [[UIView alloc]init];
+        [self.view addSubview:view];
+        _headerView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.400];
+        _headerView = view;
+
+    }
+    return _headerView;
 }
 
-- (void)addSecondGroup {
+//- (UIView *)buttomView {
+//    if ( _buttomView == nil) {
+//        UIView *view = [[UIView alloc]init];
+//        [self.view addSubview:view];
+//        
+//        _buttomView = view;
+//        _buttomView.backgroundColor = [UIColor redColor];
+//    }
+//    return _buttomView;
+//}
+
+- (UITableView *)tableView {
+    if ( _tableView == nil) {
+        UITableView *tableView = [[UITableView alloc]init];
+        [self.view addSubview:tableView];
+        _tableView = tableView;
+        _tableView.opaque = YES;
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+  
+    }
+    return _tableView;
+}
+
+#pragma mark - setView 
+
+- (void)addConstraints {
+    [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        
+        make.top.equalTo(self.view.mas_top);
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.view.mas_right);
+        make.height.equalTo(@120);
+        
+    }];
     
-    WPSettingItem *item4 = [WPSettingArrowItem itemWithTitle:@"检查新版本 " icon:@"MoreUpdate"];
-    //🐷添加一段功能
-    item4.option = ^{
-        // 1.  显示蒙板
-        [MBProgressHUD showMessage:@"正在检查更新..."];
+//    [self.buttomView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        
+//        make.left.equalTo(self.view.mas_left);
+//        make.right.equalTo(self.view.mas_right);
+//        make.bottom.equalTo(self.view.mas_bottom);
+//        make.height.equalTo(@80);
+//        
+//    }];
+    
+    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.equalTo(self.headerView.mas_bottom);
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.view.mas_right);
+        make.bottom.equalTo(self.view.mas_bottom);
         
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 2. 掩藏蒙板
-            [MBProgressHUD hideHUD];
-            
-            // 3. 提示用户
-            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"有更新版本" message:nil delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"立即更新", nil];
-            [alertView show];
-            
-        });
+    }];
+
+}
+
+
+- (void)addHeaderButton {
+    
+    
+    /** 封装内部block 函数私有 */
+    void(^myBlock)(NSString *,CGRect) = ^(NSString *imageName,CGRect frame){
+        
+        UIImage *image =[UIImage imageWithName:imageName border:0.5 borderColor:[UIColor grayColor]];
+        UIButton *button = [[UIButton alloc]initWithFrame:frame];
+        [button setImage:image forState:UIControlStateNormal];
+        [self.headerView addSubview:button];
+    
     };
     
+    NSUInteger btnCount = 4;
+    CGFloat btnW = leftDrawerWidth /btnCount;
+    CGFloat btnH = btnW;
+    CGFloat topMargin = 20;
+    myBlock(@"pay_logo_weixin",CGRectMake(0, topMargin, btnH, btnW));
+    myBlock(@"personal_qq",CGRectMake(btnW * 1, topMargin, btnH, btnW));
+    myBlock(@"personal_sina",CGRectMake(btnW * 2, topMargin, btnH, btnW));
+    myBlock(@"personal_weibo",CGRectMake(btnW * 3, topMargin, btnH , btnW));
+
     
-    
-    WPSettingItem *item5 = [WPSettingArrowItem itemWithTitle:@"帮助" icon:@"MoreHelp" destVcClass:[UIViewController class]];
-    WPSettingItem *item6 = [WPSettingArrowItem itemWithTitle:@"分享" icon:@"MoreShare" destVcClass:[UITableViewController class]];
-    WPSettingArrowItem *item7 = [WPSettingArrowItem itemWithTitle:@"产品推荐" icon:@"MoreNetease" destVcClass:[UITableViewController class]];
-    WPSettingArrowItem *item8 = [WPSettingArrowItem itemWithTitle:@"关于" icon:@"MoreAbout" destVcClass:[UITableViewController class]];
-    
-    
-    WPSettingGroup *secondGroup = [WPSettingGroup new];
-    secondGroup.items = @[item4,item5,item6,item7,item8];
-    secondGroup.headerTitle = @"abc";
-    secondGroup.footerTitle = @"abc";
-    
-    [self.dataList addObject:secondGroup];
     
 }
 
-#pragma mark - Table view data source   父类去做
+
+
+
+#pragma mark - tabView delegate
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   static NSString *const identifier = @"cellID";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.opaque = YES;
+    }
+    
+    
+    switch (indexPath.row) {
+        case 0:
+            cell.textLabel.text = @"   新闻";
+            cell.imageView.image = [UIImage imageNamed:@"tabbar_icon_news_highlight"];
+            break;
+        case 1:
+            cell.textLabel.text = @"   阅读";
+            cell.imageView.image = [UIImage imageNamed:@"tabbar_icon_reader_highlight"];
+            break;
+        case 2:
+            cell.textLabel.text = @"   视听";
+            cell.imageView.image = [UIImage imageNamed:@"tabbar_icon_media_highlight"];
+            break;
+        case 3:
+            cell.textLabel.text = @"   发现";
+            cell.imageView.image = [UIImage imageNamed:@"tabbar_icon_found_highlight"];
+            break;
+        case 4:
+            cell.textLabel.text = @"   我";
+            cell.imageView.image = [UIImage imageNamed:@"tabbar_icon_me_highlight"];
+            break;
+        case 5:
+            cell.textLabel.text = @"   设置";
+            cell.imageView.image = [UIImage imageNamed:@"tabbar_icon_me_highlight"];
+            break;
+            
+        default:
+            break;
+
+    }
+    
+    return cell;
+}
+
+
+
+#warning TODO  推出的模式不是我想要的  自定义吗 ？
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == 5) {
+        SDSettingViewController *setingVC = [[SDSettingViewController alloc]init] ;
+        
+        UINavigationController *navi = (UINavigationController *)self.mm_drawerController.centerViewController;
+        
+        // self.modalTransitionStyle =
+        
+        
+        [navi  pushViewController:setingVC animated:YES];
+        [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
+
+    }
+    
+//    UINavigationController *new = [[UINavigationController alloc]init];
+//    UIWindow *win = [UIApplication sharedApplication].windows.firstObject;
+
+//    self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//    [self presentViewController:setingVC animated:YES completion:nil];
+}
+
 
 
 

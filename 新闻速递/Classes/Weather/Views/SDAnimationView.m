@@ -29,15 +29,12 @@
 
         UILabel *titleLbl = [[UILabel alloc]init];
         titleLbl.font = [UIFont fontWithName:@"HYQiHei" size:16];
+        titleLbl.textColor = [UIColor whiteColor];
         titleLbl.text = title;
         titleLbl.textAlignment = NSTextAlignmentCenter;
         [self addSubview:titleLbl];
         _titleLbl = titleLbl;
-      
-        
-         // 测试用
-        self.backgroundColor = RandomColor;
-        
+
     }
     return self;
 
@@ -52,17 +49,20 @@
 -(void)setFrame:(CGRect)frame {
  
 #warning  TODO  计算布局   动画的block  点击 的代理 ？？？？
-    
     [super setFrame:frame];
+    CGFloat viewH = frame.size.height;
+    CGFloat viewW = frame.size.width;
     
-     _button.frame  = frame;
+    CGFloat margin = 15;
+    CGFloat buttonW = viewW - 2 * margin;
+    CGFloat buttonH = buttonW;
+    _button.frame  = CGRectMake(margin, margin, buttonW, buttonH);
     _button.layer.cornerRadius = frame.size.width/2;
     _button.layer.masksToBounds = YES;
+    _iconImage.frame = _button.frame;
+    CGFloat titleY = margin + buttonH;
     
-    _iconImage.frame = frame;
-
-    // 改
-    _titleLbl.frame = frame;
+    _titleLbl.frame = CGRectMake(margin, titleY, viewW - 2 * margin  , viewH - titleY);
     
 }
 
