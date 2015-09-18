@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface SDDetailModel : NSObject
 
 /** 新闻标题 */
@@ -21,5 +22,7 @@
 
 
 + (instancetype)detailWithDict:(NSDictionary *)dict;
+
+
 
 @end

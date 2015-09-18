@@ -8,7 +8,7 @@
 
 #import "SDPhotoSet.h"
 #import "SDPhotosDetail.h"
-
+#import "MJExtension.h"
 @implementation SDPhotoSet
 
 + (instancetype)photoSetWith:(NSDictionary *)dict
@@ -27,5 +27,5 @@
     
     return photoSet;
 }
-
+MJCodingImplementation
 @end

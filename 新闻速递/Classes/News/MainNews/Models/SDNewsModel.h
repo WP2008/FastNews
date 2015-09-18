@@ -14,7 +14,7 @@
 /**
  *  新闻发布时间
  */
-@property (nonatomic,copy) NSString *ptime;
+//@property (nonatomic,copy) NSString *ptime;
 /**
  *  标题
  */

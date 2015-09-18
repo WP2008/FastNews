@@ -8,7 +8,7 @@
 
 #import "SDDetailModel.h"
 #import "SDDetailImgModel.h"
-
+#import "MJExtension.h"
 
 @implementation SDDetailModel
 /** 便利构造器 */
@@ -31,4 +31,7 @@
     
     return detail;
 }
+
+MJCodingImplementation
+
 @end

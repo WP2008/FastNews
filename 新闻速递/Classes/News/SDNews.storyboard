@@ -188,9 +188,6 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OJa-1t-21g">
-                                            <rect key="frame" x="8" y="35" width="359" height="102"/>
-                                        </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogh-hq-lkJ" userLabel="线">
                                             <rect key="frame" x="0.0" y="169" width="375" height="1"/>
                                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -198,6 +195,9 @@
                                                 <constraint firstAttribute="height" constant="1" id="pTb-UZ-ugC"/>
                                             </constraints>
                                         </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OJa-1t-21g">
+                                            <rect key="frame" x="8" y="35" width="359" height="102"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ffX-Af-qfW" firstAttribute="top" secondItem="xvB-fX-h5J" secondAttribute="top" constant="8" id="CYS-XR-VlP"/>
@@ -338,7 +338,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kn8-D3-qQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2793.5" y="-1028"/>
+            <point key="canvasLocation" x="-2859.5" y="-1035"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="XJr-5f-RzB">
@@ -726,6 +726,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="leE-vu-WA5"/>
-        <segue reference="PMQ-m2-6te"/>
+        <segue reference="oEy-e9-NEi"/>
     </inferredMetricsTieBreakers>
 </document>

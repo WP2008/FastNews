@@ -7,7 +7,7 @@
 //
 
 #import "SDReplyModel.h"
-
+#import "MJExtension.h"
 @implementation SDReplyModel
-
+MJCodingImplementation
 @end

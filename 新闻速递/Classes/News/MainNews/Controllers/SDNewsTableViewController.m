@@ -18,6 +18,7 @@
 
 #import "SDDetailViewController.h"
 #import "SDPhotoSetController.h"
+#import "SDSaveNewsTool.h"
 
 typedef NS_ENUM(NSUInteger, SDLoadDataType) {
     SDLoadNewData,
@@ -98,7 +99,22 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
     // http://c.m.163.com//nc/article/list/T1348649654285/0-20.html
     // http://c.m.163.com/photo/api/set/0096/57255.json
     // http://c.m.163.com/photo/api/set/54GI0096/57203.html
- 
+    
+// 尝试在数据库中取得
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"newsType"] = self.urlString;
+    
+    NSArray *newNewsArray = [SDSaveNewsTool newsWithParams:params];
+    if (newNewsArray) {
+    // 刷新数据库中的数据
+        
+    } else {
+    // 数据库中没有数据
+    
+    
+    }
+    
+    
 [[SDNetWorkTool sharedNetworkTool]GET:urlStr parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
     
     NSString *key = [responseObject.keyEnumerator nextObject]; // 获取字典中得 key
@@ -122,6 +138,7 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
 } failure:^(NSURLSessionDataTask *task, NSError *error) {
     
         [MBProgressHUD showError:@"加载失败，请稍候再试"];
+        [self.tableView headerEndRefreshing];
 }];
 
 

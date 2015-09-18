@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		853253951BABA8A100F20129 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 853253941BABA8A100F20129 /* libsqlite3.0.dylib */; };
+		853845FB1BAAEA0F00F79CE3 /* SDSaveNewsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 853845FA1BAAEA0F00F79CE3 /* SDSaveNewsTool.m */; };
+		853846081BAAF2C200F79CE3 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 853845FE1BAAF2C200F79CE3 /* FMDatabase.m */; };
+		853846091BAAF2C200F79CE3 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 853846001BAAF2C200F79CE3 /* FMDatabaseAdditions.m */; };
+		8538460A1BAAF2C200F79CE3 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 853846021BAAF2C200F79CE3 /* FMDatabasePool.m */; };
+		8538460B1BAAF2C200F79CE3 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 853846041BAAF2C200F79CE3 /* FMDatabaseQueue.m */; };
+		8538460C1BAAF2C200F79CE3 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 853846071BAAF2C200F79CE3 /* FMResultSet.m */; };
 		8557F8021BA543F400898945 /* SDAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8011BA543F400898945 /* SDAnimationView.m */; };
 		8557F80A1BA5573500898945 /* SDWeatherDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8557F8081BA5573500898945 /* SDWeatherDetailVC.m */; };
 		8557F80B1BA5573500898945 /* SDWeatherDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8557F8091BA5573500898945 /* SDWeatherDetailVC.xib */; };
@@ -138,6 +145,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		853253941BABA8A100F20129 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		853845F91BAAEA0F00F79CE3 /* SDSaveNewsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSaveNewsTool.h; sourceTree = "<group>"; };
+		853845FA1BAAEA0F00F79CE3 /* SDSaveNewsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSaveNewsTool.m; sourceTree = "<group>"; };
+		853845FD1BAAF2C200F79CE3 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		853845FE1BAAF2C200F79CE3 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		853845FF1BAAF2C200F79CE3 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		853846001BAAF2C200F79CE3 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		853846011BAAF2C200F79CE3 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		853846021BAAF2C200F79CE3 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		853846031BAAF2C200F79CE3 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		853846041BAAF2C200F79CE3 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		853846051BAAF2C200F79CE3 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		853846061BAAF2C200F79CE3 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		853846071BAAF2C200F79CE3 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		8557F8001BA543F400898945 /* SDAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAnimationView.h; sourceTree = "<group>"; };
 		8557F8011BA543F400898945 /* SDAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAnimationView.m; sourceTree = "<group>"; };
 		8557F8071BA5573500898945 /* SDWeatherDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWeatherDetailVC.h; sourceTree = "<group>"; };
@@ -380,6 +401,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853253951BABA8A100F20129 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +415,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		853845FC1BAAF2C200F79CE3 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				853845FD1BAAF2C200F79CE3 /* FMDatabase.h */,
+				853845FE1BAAF2C200F79CE3 /* FMDatabase.m */,
+				853845FF1BAAF2C200F79CE3 /* FMDatabaseAdditions.h */,
+				853846001BAAF2C200F79CE3 /* FMDatabaseAdditions.m */,
+				853846011BAAF2C200F79CE3 /* FMDatabasePool.h */,
+				853846021BAAF2C200F79CE3 /* FMDatabasePool.m */,
+				853846031BAAF2C200F79CE3 /* FMDatabaseQueue.h */,
+				853846041BAAF2C200F79CE3 /* FMDatabaseQueue.m */,
+				853846051BAAF2C200F79CE3 /* FMDB.h */,
+				853846061BAAF2C200F79CE3 /* FMResultSet.h */,
+				853846071BAAF2C200F79CE3 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		8557F8061BA5572700898945 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,7 +575,8 @@
 				857550481BA5288600CA04B5 /* Models */,
 				857550491BA5288600CA04B5 /* Views */,
 			);
-			path = Weather;
+			name = Weather;
+			path = ../../../Weather;
 			sourceTree = "<group>";
 		};
 		857550481BA5288600CA04B5 /* Models */ = {
@@ -713,6 +754,7 @@
 		858A10D71BA4145600F1D017 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				857550461BA5288600CA04B5 /* Weather */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -720,6 +762,7 @@
 		85AFE1261BA263DB00988851 = {
 			isa = PBXGroup;
 			children = (
+				853253941BABA8A100F20129 /* libsqlite3.0.dylib */,
 				85AFE1311BA263DB00988851 /* 新闻速递 */,
 				85AFE14B1BA263DB00988851 /* 新闻速递Tests */,
 				85AFE1301BA263DB00988851 /* Products */,
@@ -780,7 +823,6 @@
 			children = (
 				85AFE1591BA264FC00988851 /* 新闻主界面 */,
 				85AFE1831BA2743700988851 /* News */,
-				857550461BA5288600CA04B5 /* Weather */,
 				855EE7771BA68EE600BC5556 /* set(设置界面) */,
 				85AFE1691BA2661600988851 /* Categorys */,
 				85AFE16A1BA2661600988851 /* Libs */,
@@ -848,6 +890,7 @@
 		85AFE16A1BA2661600988851 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				853845FC1BAAF2C200F79CE3 /* fmdb */,
 				855EE7691BA658C600BC5556 /* MMDrawerController */,
 				85E1E5721BA30BA1005BEF7B /* Masonry */,
 				85E1E5671BA2F247005BEF7B /* MBProgressHUD */,
@@ -867,6 +910,8 @@
 				858A10C01BA3DABC00F1D017 /* SDHTTPManager.m */,
 				85E1E5611BA2C752005BEF7B /* SDNetWorkTool.h */,
 				85E1E5621BA2C752005BEF7B /* SDNetWorkTool.m */,
+				853845F91BAAEA0F00F79CE3 /* SDSaveNewsTool.h */,
+				853845FA1BAAEA0F00F79CE3 /* SDSaveNewsTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1166,6 +1211,7 @@
 				85E1E5401BA2C340005BEF7B /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				855EE78F1BA6A03E00BC5556 /* WPSettingArrowItem.m in Sources */,
 				85E1E53D1BA2C340005BEF7B /* AFURLRequestSerialization.m in Sources */,
+				853846081BAAF2C200F79CE3 /* FMDatabase.m in Sources */,
 				85E1E5951BA30BA1005BEF7B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				85E1E5931BA30BA1005BEF7B /* MASViewConstraint.m in Sources */,
 				85E1E55F1BA2C340005BEF7B /* UIImageView+WebCache.m in Sources */,
@@ -1215,6 +1261,8 @@
 				85E1E54E1BA2C340005BEF7B /* UIScrollView+MJExtension.m in Sources */,
 				85E1E5431BA2C340005BEF7B /* MJProperty.m in Sources */,
 				85E1E53B1BA2C340005BEF7B /* AFSecurityPolicy.m in Sources */,
+				8538460B1BAAF2C200F79CE3 /* FMDatabaseQueue.m in Sources */,
+				853845FB1BAAEA0F00F79CE3 /* SDSaveNewsTool.m in Sources */,
 				85E1E5441BA2C340005BEF7B /* MJType.m in Sources */,
 				857550511BA528A000CA04B5 /* SDWeatherDetailM.m in Sources */,
 				85E1E55C1BA2C340005BEF7B /* UIImage+MultiFormat.m in Sources */,
@@ -1232,11 +1280,13 @@
 				85E1E5471BA2C340005BEF7B /* NSObject+MJProperty.m in Sources */,
 				858A10E01BA4214B00F1D017 /* SDPhotoSet.m in Sources */,
 				85AFE1711BA267CE00988851 /* SDMainViewController.m in Sources */,
+				8538460A1BAAF2C200F79CE3 /* FMDatabasePool.m in Sources */,
 				8571AA631BA80D6C00C75D8C /* ILAboutHeaderView.m in Sources */,
 				858A10CE1BA3F46500F1D017 /* SDReplyCell.m in Sources */,
 				85E1E54B1BA2C340005BEF7B /* MJRefreshConst.m in Sources */,
 				858A10DA1BA4148600F1D017 /* SDPhotoSetController.m in Sources */,
 				85E1E5391BA2C340005BEF7B /* AFHTTPSessionManager.m in Sources */,
+				8538460C1BAAF2C200F79CE3 /* FMResultSet.m in Sources */,
 				85E1E5481BA2C340005BEF7B /* NSString+MJExtension.m in Sources */,
 				855EE79A1BA6EE9E00BC5556 /* UIImage+Tool.m in Sources */,
 				85AFE16E1BA266A900988851 /* SDNavigationController.m in Sources */,
@@ -1262,6 +1312,7 @@
 				855EE7831BA69AE900BC5556 /* WPSettingItem.m in Sources */,
 				85E1E53A1BA2C340005BEF7B /* AFNetworkReachabilityManager.m in Sources */,
 				85E1E58E1BA30BA1005BEF7B /* MASCompositeConstraint.m in Sources */,
+				853846091BAAF2C200F79CE3 /* FMDatabaseAdditions.m in Sources */,
 				85E1E53E1BA2C340005BEF7B /* AFURLResponseSerialization.m in Sources */,
 				858A10CB1BA3F42300F1D017 /* SDReplyViewController.m in Sources */,
 				85E1E5411BA2C340005BEF7B /* MJExtensionConst.m in Sources */,

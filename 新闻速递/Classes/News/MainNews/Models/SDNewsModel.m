@@ -7,6 +7,7 @@
 //
 
 #import "SDNewsModel.h"
+#import "MJExtension.h"
 
 @implementation SDNewsModel
 
@@ -18,5 +19,7 @@
     
     return model;
 }
+
+MJCodingImplementation
 
 @end

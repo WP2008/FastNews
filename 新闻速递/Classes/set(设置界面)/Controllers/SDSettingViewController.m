@@ -46,28 +46,26 @@
   
     // 获取缓存中的image size
     double size = [[SDImageCache sharedImageCache] getSize];
-    WPSettingLabelItem *cleckItem = [WPSettingLabelItem itemWithTitle:[NSString stringWithFormat:@" 清除图片缓存 (%.1f M)",(size/1000.0/1000.0)] icon:nil];
+    WPSettingLabelItem *clearItem = [WPSettingLabelItem itemWithTitle:[NSString stringWithFormat:@" 清除图片缓存 (%.1f M)",(size/1000.0/1000.0)] icon:nil];
 
 
-    __weak WPSettingLabelItem *instance = cleckItem ;
-     cleckItem.option = ^{
+    __weak WPSettingLabelItem *instance = clearItem ;
+     clearItem.option = ^{
          // 1.  显示蒙板
         [MBProgressHUD showMessage:@"正在清除图片缓存"];
          
         [[SDImageCache sharedImageCache] clearDisk];
-         
-        instance.title = [NSString stringWithFormat:@" 清除图片缓存 (0.0 M)"] ;
-      
-        [self.view performSelector:@selector(reloadData)];
+         instance.title = [NSString stringWithFormat:@" 清除图片缓存 (0.0 M)"] ;
+         [self.view performSelector:@selector(reloadData)];
 
         [MBProgressHUD hideHUD];
-         
+        
     };
 
     
     
     WPSettingGroup *firstGroup = [WPSettingGroup new];
-    firstGroup.items = @[push,link,sound,cleckItem];
+    firstGroup.items = @[push,link,sound,clearItem];
     firstGroup.headerTitle = @"基本设置";
     firstGroup.footerTitle = @"一段测试文字";
     
