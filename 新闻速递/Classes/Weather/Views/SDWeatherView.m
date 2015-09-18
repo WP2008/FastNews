@@ -69,7 +69,7 @@
         btn.y = rows * h;
        
         
-        Log(@"%@",NSStringFromCGRect( btn.frame));
+        //Log(@"%@",NSStringFromCGRect( btn.frame));
     
     }
 }

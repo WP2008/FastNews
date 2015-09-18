@@ -334,7 +334,7 @@
     NSString *url = @"http://c.3g.163.com/nc/weather/5YyX5LqsfOWMl%2BS6rA%3D%3D.html";
     [[SDHTTPManager manager]GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         
-        Log(@"%@",responseObject);
+        //Log(@"%@",responseObject);
         SDWeatherModel *weatherModel = [SDWeatherModel objectWithKeyValues:responseObject];
         
         self.weatherModel = weatherModel;

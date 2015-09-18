@@ -1,5 +1,5 @@
 //
-//  SDSaveNewsTool.h
+//  SDNewsTool.h
 //  新闻速递
 //
 //  Created by tarena on 15/9/17.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SDSaveNewsTool : NSObject
+@interface SDNewsTool : NSObject
 /**
  *  根据请求参数去沙盒中加载缓存的新闻数据
  *
@@ -21,5 +21,10 @@
  *
  *  @param statuses 需要存储的新闻数据
  */
-+ (void)saveNews:(NSArray *)statuses;
++ (void)saveNews:(NSArray *)newses NewsType:(NSString *)newsType;
+
+extern NSString * const dateFormat;
+extern NSString * const firstPtime;
+extern NSString * const lastPtime;
+extern NSString * const newsType;
 @end

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		853253951BABA8A100F20129 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 853253941BABA8A100F20129 /* libsqlite3.0.dylib */; };
-		853845FB1BAAEA0F00F79CE3 /* SDSaveNewsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 853845FA1BAAEA0F00F79CE3 /* SDSaveNewsTool.m */; };
+		853845FB1BAAEA0F00F79CE3 /* SDNewsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 853845FA1BAAEA0F00F79CE3 /* SDNewsTool.m */; };
 		853846081BAAF2C200F79CE3 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 853845FE1BAAF2C200F79CE3 /* FMDatabase.m */; };
 		853846091BAAF2C200F79CE3 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 853846001BAAF2C200F79CE3 /* FMDatabaseAdditions.m */; };
 		8538460A1BAAF2C200F79CE3 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 853846021BAAF2C200F79CE3 /* FMDatabasePool.m */; };
@@ -75,6 +75,7 @@
 		85AFE17C1BA26AC600988851 /* NewsURLs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85AFE17B1BA26AC600988851 /* NewsURLs.plist */; };
 		85AFE17F1BA26EE200988851 /* SDTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AFE17E1BA26EE200988851 /* SDTitleLabel.m */; };
 		85AFE1821BA26FAB00988851 /* SDCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AFE1811BA26FAB00988851 /* SDCount.m */; };
+		85D6F7851BAC3613005BD108 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D6F7841BAC3613005BD108 /* NSString+Extension.m */; };
 		85E1E5371BA2C340005BEF7B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E4DD1BA2C340005BEF7B /* AFHTTPRequestOperation.m */; };
 		85E1E5381BA2C340005BEF7B /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E4DF1BA2C340005BEF7B /* AFHTTPRequestOperationManager.m */; };
 		85E1E5391BA2C340005BEF7B /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E1E4E11BA2C340005BEF7B /* AFHTTPSessionManager.m */; };
@@ -146,8 +147,8 @@
 
 /* Begin PBXFileReference section */
 		853253941BABA8A100F20129 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		853845F91BAAEA0F00F79CE3 /* SDSaveNewsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSaveNewsTool.h; sourceTree = "<group>"; };
-		853845FA1BAAEA0F00F79CE3 /* SDSaveNewsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSaveNewsTool.m; sourceTree = "<group>"; };
+		853845F91BAAEA0F00F79CE3 /* SDNewsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNewsTool.h; sourceTree = "<group>"; };
+		853845FA1BAAEA0F00F79CE3 /* SDNewsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNewsTool.m; sourceTree = "<group>"; };
 		853845FD1BAAF2C200F79CE3 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		853845FE1BAAF2C200F79CE3 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		853845FF1BAAF2C200F79CE3 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -274,6 +275,8 @@
 		85AFE1801BA26FAB00988851 /* SDCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCount.h; sourceTree = "<group>"; };
 		85AFE1811BA26FAB00988851 /* SDCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCount.m; sourceTree = "<group>"; };
 		85AFE1871BA278B200988851 /* HYQiHei-50J.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HYQiHei-50J.ttf"; sourceTree = "<group>"; };
+		85D6F7831BAC3613005BD108 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		85D6F7841BAC3613005BD108 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		85E1E4DC1BA2C340005BEF7B /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		85E1E4DD1BA2C340005BEF7B /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		85E1E4DE1BA2C340005BEF7B /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -576,7 +579,7 @@
 				857550491BA5288600CA04B5 /* Views */,
 			);
 			name = Weather;
-			path = ../../../Weather;
+			path = ../Weather;
 			sourceTree = "<group>";
 		};
 		857550481BA5288600CA04B5 /* Models */ = {
@@ -754,7 +757,6 @@
 		858A10D71BA4145600F1D017 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				857550461BA5288600CA04B5 /* Weather */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -883,6 +885,8 @@
 				85AFE1791BA2699500988851 /* NSArray+Log.m */,
 				85AFE1741BA2698000988851 /* UIView+Extension.h */,
 				85AFE1751BA2698000988851 /* UIView+Extension.m */,
+				85D6F7831BAC3613005BD108 /* NSString+Extension.h */,
+				85D6F7841BAC3613005BD108 /* NSString+Extension.m */,
 			);
 			path = Categorys;
 			sourceTree = "<group>";
@@ -910,8 +914,8 @@
 				858A10C01BA3DABC00F1D017 /* SDHTTPManager.m */,
 				85E1E5611BA2C752005BEF7B /* SDNetWorkTool.h */,
 				85E1E5621BA2C752005BEF7B /* SDNetWorkTool.m */,
-				853845F91BAAEA0F00F79CE3 /* SDSaveNewsTool.h */,
-				853845FA1BAAEA0F00F79CE3 /* SDSaveNewsTool.m */,
+				853845F91BAAEA0F00F79CE3 /* SDNewsTool.h */,
+				853845FA1BAAEA0F00F79CE3 /* SDNewsTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -923,6 +927,7 @@
 				858A109F1BA3D13700F1D017 /* MainNews */,
 				858A10AE1BA3D16500F1D017 /* DetailNews */,
 				858A10C21BA3E19000F1D017 /* ReplyNews */,
+				857550461BA5288600CA04B5 /* Weather */,
 				858A10D41BA4145600F1D017 /* PhotoSet */,
 			);
 			path = News;
@@ -1213,6 +1218,7 @@
 				85E1E53D1BA2C340005BEF7B /* AFURLRequestSerialization.m in Sources */,
 				853846081BAAF2C200F79CE3 /* FMDatabase.m in Sources */,
 				85E1E5951BA30BA1005BEF7B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				85D6F7851BAC3613005BD108 /* NSString+Extension.m in Sources */,
 				85E1E5931BA30BA1005BEF7B /* MASViewConstraint.m in Sources */,
 				85E1E55F1BA2C340005BEF7B /* UIImageView+WebCache.m in Sources */,
 				85E1E5571BA2C340005BEF7B /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1262,7 +1268,7 @@
 				85E1E5431BA2C340005BEF7B /* MJProperty.m in Sources */,
 				85E1E53B1BA2C340005BEF7B /* AFSecurityPolicy.m in Sources */,
 				8538460B1BAAF2C200F79CE3 /* FMDatabaseQueue.m in Sources */,
-				853845FB1BAAEA0F00F79CE3 /* SDSaveNewsTool.m in Sources */,
+				853845FB1BAAEA0F00F79CE3 /* SDNewsTool.m in Sources */,
 				85E1E5441BA2C340005BEF7B /* MJType.m in Sources */,
 				857550511BA528A000CA04B5 /* SDWeatherDetailM.m in Sources */,
 				85E1E55C1BA2C340005BEF7B /* UIImage+MultiFormat.m in Sources */,

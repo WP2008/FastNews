@@ -18,7 +18,7 @@
 
 #import "SDDetailViewController.h"
 #import "SDPhotoSetController.h"
-#import "SDSaveNewsTool.h"
+#import "SDNewsTool.h"
 
 typedef NS_ENUM(NSUInteger, SDLoadDataType) {
     SDLoadNewData,
@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
 
 @interface SDNewsTableViewController ()
 
-/**   */
+/** 新闻的数组 */
 @property(nonatomic,strong) NSMutableArray *arrayList;
 
 @property(nonatomic,getter=isFirstUpload)BOOL firstUpload;
@@ -58,9 +58,7 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
     if (self.isFirstUpload) {
         [self.tableView headerBeginRefreshing];
         self.firstUpload = NO;
-        
     }
-    
 }
 
 
@@ -95,38 +93,18 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
 
 // ------公共方法
 - (void)loadDataForType:(SDLoadDataType)type WithURLString:(NSString *)urlStr {
-
+    
     // http://c.m.163.com//nc/article/list/T1348649654285/0-20.html
     // http://c.m.163.com/photo/api/set/0096/57255.json
     // http://c.m.163.com/photo/api/set/54GI0096/57203.html
     
-// 尝试在数据库中取得
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"newsType"] = self.urlString;
+// 定义一个block处理返回的字典数据
+void (^loadNewsBlock)(NSArray *) = ^(NSArray *newsArray){
     
-    NSArray *newNewsArray = [SDSaveNewsTool newsWithParams:params];
-    if (newNewsArray) {
-    // 刷新数据库中的数据
-        
-    } else {
-    // 数据库中没有数据
-    
-    
-    }
-    
-    
-[[SDNetWorkTool sharedNetworkTool]GET:urlStr parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
-    
-    NSString *key = [responseObject.keyEnumerator nextObject]; // 获取字典中得 key
-    NSArray *temArray = responseObject[key];
-    
-    NSMutableArray *arrayM = [SDNewsModel objectArrayWithKeyValuesArray:temArray];
-    
-    
-#warning 注意线程  主线程
+     NSMutableArray *arrayM = [SDNewsModel objectArrayWithKeyValuesArray:newsArray];
     
     if (type == SDLoadNewData) {
-        self.arrayList = arrayM;
+        self.arrayList = [NSMutableArray arrayWithArray:arrayM];
         [self.tableView headerEndRefreshing];
         [self.tableView reloadData];
     }else if(type == SDLoadMoreData){
@@ -134,13 +112,64 @@ typedef NS_ENUM(NSUInteger, SDLoadDataType) {
         [self.tableView footerEndRefreshing];
         [self.tableView reloadData];
     }
-    
-} failure:^(NSURLSessionDataTask *task, NSError *error) {
-    
-        [MBProgressHUD showError:@"加载失败，请稍候再试"];
-        [self.tableView headerEndRefreshing];
-}];
 
+};
+    
+ 
+    
+// 取出最前面的新闻（最新的新闻，发布时间 ptime 最新）
+    
+    SDNewsModel *firstNews = self.arrayList.firstObject;
+    SDNewsModel *lastNews = self.arrayList.lastObject;
+#warning TODO 数据库存储
+// 尝试在数据库中取得
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    // 新闻的类别
+      params[newsType] = self.urlString;
+    // 新闻的发布时间   这是个字符串 怎么比较新闻的发布时间
+    if (type == SDLoadNewData) {
+        if (firstNews.ptime != nil ) {
+            params[firstPtime] = firstNews.ptime;
+            
+        }
+    } else if(type == SDLoadMoreData) {
+        if (lastNews.ptime != nil ) {
+            params[lastPtime] = lastNews.ptime;
+            
+        }
+    }
+    
+    NSArray *temArray = nil;//[SDNewsTool newsWithParams:params];
+    
+    if (temArray.count != 0 ) {
+    // 刷新数据库中的数据
+           loadNewsBlock(temArray);
+        
+    } else {
+    // 数据库中没有数据
+        
+        [[SDNetWorkTool sharedNetworkTool]GET:urlStr parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
+            
+            NSString *key = [responseObject.keyEnumerator nextObject]; // 获取字典中得 key
+            NSArray *temArray = responseObject[key];
+    #warning TODO 缓存到数据库
+            // 缓存新闻返回的字典数组
+            [SDNewsTool saveNews:temArray NewsType:self.urlString];
+            
+            //  调用私有block
+            loadNewsBlock(temArray);
+            
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+            [MBProgressHUD showError:@"加载失败，请稍候再试"];
+            [self.tableView headerEndRefreshing];
+        }];
+        
+
+    
+    }
+    
 
 }
 
