@@ -36,18 +36,20 @@ static FMDatabase *_db;
     NSString *sql = nil;
     
     if (params[firstPtime]) {
-        // 加载最新
-        sql = [NSString stringWithFormat:@"SELECT * FROM t_news WHERE newsType = %@  ptime > %@ ORDER BY ptime DESC LIMIT 20;",params[newsType],
-               params[firstPtime]];
+            // 加载最新
+        NSString *timestamp = [NSString timestampWithString:params[firstPtime] andDateFormat:dateFormat];
+
+        sql = [NSString stringWithFormat:@"SELECT * FROM t_news WHERE newsType = %@ AND ptime > %@ ORDER BY ptime DESC LIMIT 20;",params[newsType] ,timestamp];
         
     } else if (params[lastPtime]) {
         // 加载更多
-        sql = [NSString stringWithFormat:@"SELECT * FROM t_news WHERE newsType = %@  ptime <= %@ ORDER BY ptime DESC LIMIT 20;",params[newsType],
-               params[lastPtime]];
+        NSString *timestamp = [NSString timestampWithString:params[lastPtime] andDateFormat:dateFormat];
+
+        sql = [NSString stringWithFormat:@"SELECT * FROM t_news WHERE newsType = %@ AND ptime <= %@ ORDER BY ptime DESC LIMIT 20;",params[newsType] ,timestamp];
         
     } else {
         //第一次进入程序
-        sql = [NSString stringWithFormat:@"SELECT * FROM t_news WHERE newsType = %@  ORDER BY ptime DESC LIMIT 20;",params[newsType]];
+        sql = [NSString stringWithFormat:@"SELECT * FROM t_news WHERE newsType = (%@)  ORDER BY ptime DESC LIMIT 20;",params[newsType] ];
         
     } 
     
@@ -80,7 +82,7 @@ static FMDatabase *_db;
        // 这是个时间戳
         NSString *ptime = [NSString timestampWithString:news[@"ptime"] andDateFormat:dateFormat];
         
-        [_db executeUpdateWithFormat:@"INSERT INTO t_news(news ,newsType ,ptime) VALUES (%@ ,%@,%@);", newsData,ptime,newsType];
+        [_db executeUpdateWithFormat:@"INSERT INTO t_news(news ,newsType ,ptime) VALUES (%@ ,%@,%@);", newsData,newsType,ptime];
     }
 }
 

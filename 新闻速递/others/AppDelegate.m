@@ -4,7 +4,17 @@
 //
 //  Created by tarena on 15/9/11.
 //  Copyright (c) 2015年 tarena. All rights reserved.
-//
+/*
+ 适配ios9
+ 在info.plist的NSAppTransportSecurity下新增NSAllowsArbitraryLoads并设置为YES，指定所有HTTP连接都可正常请求
+ 
+ <key>NSAppTransportSecurity</key>
+ <dict>
+   <key>NSAllowsArbitraryLoads</key>
+   <true/>
+ </dict>
+ 
+ */
 
 #import "AppDelegate.h"
 #import "SDNavigationController.h"
@@ -12,6 +22,24 @@
 #import "SDLeftViewController.h"
 #import "MMDrawerController.h"
 #import "SDCount.h"
+
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialSinaSSOHandler.h"
+#import "UMSocialQQHandler.h"
+
+
+#define UmengAppkey @"5630737b67e58e61c2003c41"
+
+#define WeChatAppId @"wxac8c5c31fb2ea998"
+#define WeChatAppSecret @"d4624c36b6795d1d99dcf0547af5443d"
+
+#define SinaSSOAppKey @"2665118745"
+#define SinaSSOAppSecret @"2a5fed3f0fb0394317b3526edd5a2941"
+
+#define QQAppId @"1104858253"
+#define QQappKey @"KnkDAccxURtx56Sn"
+
 
 @interface AppDelegate ()
 
@@ -78,10 +106,35 @@
     self.window.rootViewController = self.drawerController;
     
     
+    
+#pragma mark -  集成友盟
+    //集成友盟 SDK
+    [UMSocialData setAppKey:UmengAppkey];
+     // 打开调试log开关 
+    [UMSocialData openLog:YES];
+
+    // 设置微信的app ID 设置分享的url 默认使用友盟的网站
+
+    [UMSocialWechatHandler setWXAppId:WeChatAppId  appSecret:WeChatAppSecret url:@"http://www.umeng.com/social"];
+    
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:SinaSSOAppKey RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [UMSocialQQHandler setQQWithAppId:QQAppId appKey:QQappKey url:@"http://www.umeng.com/social"];
+    
+    
     return YES;
 }
 
-
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
 
 
 

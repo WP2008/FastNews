@@ -16,9 +16,11 @@
 #import "UIView+Extension.h"
 #import "SDReplyViewController.h"
 #import "SDCount.h"
+#import "UMSocial.h"
+#import "MBProgressHUD+MJ.h"
 
 
-@interface SDPhotoSetController ()
+@interface SDPhotoSetController ()<UMSocialUIDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *photoScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -28,6 +30,7 @@
 
 
 
+@property (weak, nonatomic) IBOutlet UIImageView *sharedImageView;
 
 
 
@@ -98,16 +101,59 @@
     // 假数据
     NSString *url2 = @"http://comment.api.163.com/api/json/post/list/new/hot/photoview_bbs/PHOT1ODB009654GK/0/10/10/2/2";
     [self sendRequestWithUrl2:url2];
-
+    
+    
+    self.sharedImageView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapSharedImageView)];
+    [self.sharedImageView addGestureRecognizer:tapGR];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    
-    
 }
+
+#pragma mark - 点击了 shared按钮
+- (void)tapSharedImageView {
+    
+    NSString *shareText = @"东東先生有洁癖 , http://tieba.baidu.com/f?kw=%B6%AB%BE%A9%CA%B3%CA%AC%B9%ED&fr=ala0&tpl=5 ";
+    UIImage *shareImage = [UIImage imageNamed:@"121"];
+    NSString *shareTitle = @"就是这样显示的";
+    NSString *shareUrl = @"http://baidu.com";
+    
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:nil
+                                      shareText:shareText
+                                     shareImage:shareImage
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToQQ,UMShareToWechatSession,nil]
+                                       delegate:self];
+    
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = shareUrl;
+    [UMSocialData defaultData].extConfig.qqData.url = shareUrl;
+
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = shareTitle;
+    [UMSocialData defaultData].extConfig.qqData.title = shareTitle;
+}
+
+
+
+
+//  分享完成后的回调
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的微博平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+        
+        [MBProgressHUD showSuccess:@"分享成功"];
+        
+    }
+}
+
 
 
 #pragma mark -  发请求
@@ -127,6 +173,9 @@
     }];
     
 }
+
+
+
 
 /** 提前把评论的请求也发出去 得到评论的信息 */
 - (void)sendRequestWithUrl2:(NSString *)url

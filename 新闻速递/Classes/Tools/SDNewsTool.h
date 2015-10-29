@@ -4,7 +4,7 @@
 //
 //  Created by tarena on 15/9/17.
 //  Copyright (c) 2015年 tarena. All rights reserved.
-//
+//   谁能告述我  应该存什么字段
 
 #import <Foundation/Foundation.h>
 

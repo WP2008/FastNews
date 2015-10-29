@@ -13,8 +13,8 @@
 #import "UIView+Extension.h"
 #import "SDCount.h"
 #import "UIViewController+MMDrawerController.h"
-
-
+#import "SDLoginViewController.h"
+#import "SDPhoneLoginViewController.h"
 
 #import "SDSettingViewController.h"
 
@@ -38,6 +38,8 @@
     [self addConstraints];
     [self addHeaderButton];
     
+    
+    
      self.navigationController.navigationBarHidden = YES;
 
   
@@ -50,8 +52,9 @@
     if ( _headerView == nil) {
         UIView *view = [[UIView alloc]init];
         [self.view addSubview:view];
-        _headerView.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.400];
+        
         _headerView = view;
+        _headerView.backgroundColor = [UIColor lightGrayColor];
 
     }
     return _headerView;
@@ -76,7 +79,7 @@
         _tableView.opaque = YES;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
   
     }
     return _tableView;
@@ -91,7 +94,7 @@
         make.top.equalTo(self.view.mas_top);
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
-        make.height.equalTo(@120);
+        make.height.equalTo(@130);
         
     }];
     
@@ -124,24 +127,51 @@
     /** 封装内部block 函数私有 */
     void(^myBlock)(NSString *,CGRect) = ^(NSString *imageName,CGRect frame){
         
-        UIImage *image =[UIImage imageWithName:imageName border:0.5 borderColor:[UIColor grayColor]];
+        UIImage *image =[UIImage imageWithName:imageName border:0.8 borderColor:WPColor(0, 203, 2)];
         UIButton *button = [[UIButton alloc]initWithFrame:frame];
         [button setImage:image forState:UIControlStateNormal];
         [self.headerView addSubview:button];
     
     };
     
-    NSUInteger btnCount = 4;
+    NSUInteger btnCount = 3;
     CGFloat btnW = leftDrawerWidth /btnCount;
     CGFloat btnH = btnW;
-    CGFloat topMargin = 20;
-    myBlock(@"pay_logo_weixin",CGRectMake(0, topMargin, btnH, btnW));
+    CGFloat topMargin = 10;
+    myBlock(@"personal_sina",CGRectMake(0, topMargin, btnH, btnW));
     myBlock(@"personal_qq",CGRectMake(btnW * 1, topMargin, btnH, btnW));
-    myBlock(@"personal_sina",CGRectMake(btnW * 2, topMargin, btnH, btnW));
-    myBlock(@"personal_weibo",CGRectMake(btnW * 3, topMargin, btnH , btnW));
+    myBlock(@"pay_logo_weixin",CGRectMake(btnW * 2, topMargin, btnH, btnW));
+//    myBlock(@"personal_weibo",CGRectMake(btnW * 3, topMargin, btnH , btnW));
+    
+    // 为什么按钮的设置不好用的
+    
+    
+    UIButton *loginBtn = [[UIButton alloc]initWithFrame:CGRectMake(topMargin, btnH , 100, 30)];
+    [self.headerView addSubview:loginBtn];
 
+    [loginBtn setTitle:@"更多登录方式>" forState:UIControlStateNormal];
+    loginBtn.titleLabel.font = [UIFont systemFontOfSize:11];
+    [loginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [loginBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    [loginBtn addTarget:self action:@selector(clickedLoginBtn) forControlEvents:UIControlEventTouchUpInside];
     
     
+}
+
+- (void)clickedLoginBtn {
+    Log(@"%@",@"点击了得登录按钮");
+    
+    UIStoryboard *loginStotyBoard = [UIStoryboard storyboardWithName:@"LoginStoryBoard" bundle:nil];
+    UINavigationController *navi = (UINavigationController *)self.mm_drawerController.centerViewController;
+    SDLoginViewController *loginVC = [loginStotyBoard instantiateInitialViewController];
+    
+    
+    [navi pushViewController:loginVC animated:YES];
+    
+    
+    [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
+    
+
 }
 
 

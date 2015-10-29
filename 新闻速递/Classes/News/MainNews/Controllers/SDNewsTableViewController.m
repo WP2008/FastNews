@@ -116,16 +116,16 @@ void (^loadNewsBlock)(NSArray *) = ^(NSArray *newsArray){
 };
     
  
-    
-// 取出最前面的新闻（最新的新闻，发布时间 ptime 最新）
+
+// 取出最前面和最后面的新闻（最新的新闻，发布时间 ptime 最新）
     
     SDNewsModel *firstNews = self.arrayList.firstObject;
     SDNewsModel *lastNews = self.arrayList.lastObject;
 #warning TODO 数据库存储
 // 尝试在数据库中取得
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     // 新闻的类别
-      params[newsType] = self.urlString;
+      params[newsType] = self.urlString.lastPathComponent;
     // 新闻的发布时间   这是个字符串 怎么比较新闻的发布时间
     if (type == SDLoadNewData) {
         if (firstNews.ptime != nil ) {
@@ -139,7 +139,7 @@ void (^loadNewsBlock)(NSArray *) = ^(NSArray *newsArray){
         }
     }
     
-    NSArray *temArray = nil;//[SDNewsTool newsWithParams:params];
+    NSArray *temArray = [SDNewsTool newsWithParams:params];
     
     if (temArray.count != 0 ) {
     // 刷新数据库中的数据
@@ -154,7 +154,7 @@ void (^loadNewsBlock)(NSArray *) = ^(NSArray *newsArray){
             NSArray *temArray = responseObject[key];
     #warning TODO 缓存到数据库
             // 缓存新闻返回的字典数组
-            [SDNewsTool saveNews:temArray NewsType:self.urlString];
+            [SDNewsTool saveNews:temArray NewsType:self.urlString.lastPathComponent];
             
             //  调用私有block
             loadNewsBlock(temArray);
