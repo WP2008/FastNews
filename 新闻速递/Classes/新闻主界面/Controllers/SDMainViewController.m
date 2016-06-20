@@ -331,7 +331,7 @@
 #pragma mark - 天气界面的处理
 - (void)sendWeatherRequest
 {
-    NSString *url =  ;
+    NSString *url = @"http://c.3g.163.com/nc/weather/5YyX5LqsfOWMl%2BS6rA%3D%3D.html";
     [[SDHTTPManager manager]GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         
         //Log(@"%@",responseObject);
