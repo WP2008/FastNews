@@ -331,13 +331,13 @@
 #pragma mark - 天气界面的处理
 - (void)sendWeatherRequest
 {
-    NSString *url = @"http://c.3g.163.com/nc/weather/5YyX5LqsfOWMl%2BS6rA%3D%3D.html";
+    NSString *url =  ;
     [[SDHTTPManager manager]GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         
         //Log(@"%@",responseObject);
         SDWeatherModel *weatherModel = [SDWeatherModel objectWithKeyValues:responseObject];
         
-        self.weatherModel = weatherModel;
+        self.weatherModel = weatherModel;     
        [self addWeather];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"failure %@",error);
@@ -375,7 +375,7 @@
     
     self.showAtHere.hidden = YES;
        
-}
+}      
 
 
 

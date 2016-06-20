@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HYQiHei-50J.ttf">
@@ -19,6 +19,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggL-iU-APc">
                     <rect key="frame" x="18" y="60" width="115" height="95"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="95" id="a8l-cr-5Ys"/>
                         <constraint firstAttribute="width" constant="115" id="dyZ-DJ-J2A"/>
@@ -29,6 +30,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="℃" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adm-dy-s3K">
                     <rect key="frame" x="133" y="68" width="32" height="32"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="9rF-a8-d3w"/>
                         <constraint firstAttribute="width" constant="32" id="s6n-BF-SuG"/>
@@ -39,6 +41,7 @@
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night_rain_and_snow_mini" translatesAutoresizingMaskIntoConstraints="NO" id="M3j-hr-UI9">
                     <rect key="frame" x="245" y="68" width="59" height="59"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="59" id="3Ho-yg-3UB"/>
                         <constraint firstAttribute="height" constant="59" id="5MH-LW-2L8"/>
@@ -46,6 +49,7 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阴 微风" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPF-zt-sUo">
                     <rect key="frame" x="251" y="129" width="53" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="owt-p2-vJz"/>
                     </constraints>
@@ -55,6 +59,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsE-Lb-Whk">
                     <rect key="frame" x="245" y="147" width="59" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="LHF-9m-kEa"/>
                         <constraint firstAttribute="width" constant="59" id="OCi-o7-4x3"/>
@@ -65,6 +70,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015.08.01 星期六" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hh9-gU-vxK">
                     <rect key="frame" x="27" y="156" width="143" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Z6Y-87-U0p"/>
                     </constraints>
@@ -74,6 +80,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM2.5 72 良" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezo-qd-b7q">
                     <rect key="frame" x="27" y="176" width="146" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="iDm-3l-awP"/>
                         <constraint firstAttribute="width" constant="146" id="vfs-R1-Jnn"/>
@@ -84,6 +91,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="31°/23°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owv-tI-RrS">
                     <rect key="frame" x="141" y="124" width="60" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="laW-7U-ZfC"/>
                     </constraints>
@@ -91,8 +99,17 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbz-Kb-B3l">
+                    <rect key="frame" x="0.0" y="288" width="320" height="280"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.61009837962962965" green="0.61009837962962965" blue="0.61009837962962965" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="280" id="icG-18-Tog"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Lg-s4-6JV">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="288"/>
+                    <animations/>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -100,14 +117,8 @@
                         <action selector="clickedWeatherButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="KrT-LV-nPf"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbz-Kb-B3l">
-                    <rect key="frame" x="0.0" y="288" width="320" height="280"/>
-                    <color key="backgroundColor" red="0.61009837962962965" green="0.61009837962962965" blue="0.61009837962962965" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="280" id="icG-18-Tog"/>
-                    </constraints>
-                </view>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="ggL-iU-APc" firstAttribute="top" secondItem="adm-dy-s3K" secondAttribute="top" constant="-8" id="06C-iz-xj8"/>
